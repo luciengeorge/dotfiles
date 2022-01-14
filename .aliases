@@ -1,0 +1,87 @@
+# Get External IP / Internet Speed
+alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+
+# Quickly serve the current directory as HTTP
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+# Open webpage
+web() {
+  open https://www.$1
+}
+
+# Open slack
+alias slack="open -a 'slack'"
+
+# Kick start day
+alias dev="open -a slack; open -a spark; open -a 'firefox developer edition'; open -a music; open -a notion; code .;"
+
+# Open repo
+repo() {
+  if [ $# -eq 1 ];
+    then
+      open https://www.github.com/$1
+  else
+    open https://www.github.com/$1/$2
+  fi
+}
+
+# Open PRs of repo
+pr() {
+  open https://www.github.com/$1/$2/pulls
+}
+
+# Open issues of repo
+issues() {
+  open https://www.github.com/$1/$2/issues
+}
+
+# start mongodb
+alias mongodb='$HOME/mongodb/bin/mongod --dbpath=$HOME/mongodb-data'
+
+# launch webpack-dev-server
+alias wds='webpack-dev-server'
+
+# used nvmrc version and launch webpack-dev-server
+alias nwds='nvm use && webpack-dev-server'
+
+# rails console
+alias rc="rails c"
+
+# rails server
+alias rs="rails s"
+
+# rails db:migrate
+alias rdbm="rails db:migrate"
+
+# rails db:rollback
+alias rdbr="rails db:rollback"
+
+# rails db:seed
+alias rdbs="rails db:seed"
+
+# rails db:reset
+alias rdbrst="rails db:reset"
+
+# rails db:drop
+alias rdbd="rails db:drop"
+
+# rails db:create
+alias rdbc="rails db:create"
+
+# rails db:drop db:create db:migrate db:seed
+alias rdb="rails db:drop db:create db:migrate db:seed"
+
+# rake db:import_from_aws
+alias aws="rake db:import_from_aws && rake s3:sync_prod_bucket_to_dev_bucket"
+
+# jupyter notebook
+alias jn="jupyter notebook"
+
+jslides() {
+  # jupyter nbconvert --to slides --post serve $1
+  ls *.ipynb | entr -r jupyter nbconvert "$1" --to slides --post serve --TemplateExporter.extra_template_basedirs=../templates --template=kitt;
+}
+
+# Delete squashed and merged branches
+alias sweep='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
