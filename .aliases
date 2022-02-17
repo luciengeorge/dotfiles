@@ -10,12 +10,6 @@ web() {
   open https://www.$1
 }
 
-# Open slack
-alias slack="open -a 'slack'"
-
-# Kick start day
-alias dev="open -a slack; open -a spark; open -a 'firefox developer edition'; open -a music; open -a notion; code .;"
-
 # Open repo
 repo() {
   if [ $# -eq 1 ];
