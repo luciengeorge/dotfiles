@@ -9,9 +9,9 @@ if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting
 fi
 
-if ! command -v bat &> /dev/null; then
-  sudo apt-get install -y bat
-fi
+# if ! command -v bat &> /dev/null; then
+#   sudo apt-get install -y bat
+# fi
 
 cd "$CURRENT_DIR"
 
