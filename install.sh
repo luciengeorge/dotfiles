@@ -15,3 +15,4 @@ cd "$CURRENT_DIR"
 cp ~/dotfiles/.zshrc ~/.zshrc
 cp ~/dotfiles/p10k.zsh ~/.p10k.zsh
 cp ~/dotfiles/.aliases ~/.aliases
+cp ~/dotfiles/.gitconfig ~/.gitconfig
