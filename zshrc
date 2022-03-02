@@ -1,11 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-export HOMEBREW_NO_ANALYTICS=1
 
 plugins=(gitfast git last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search)
 source $ZSH/oh-my-zsh.sh
-unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -30,6 +28,8 @@ else
 fi
 
 if [ ! "$SPIN" ]; then
+  unalias rm # No interactive rm by default (brought by plugins/common-aliases)
+  export HOMEBREW_NO_ANALYTICS=1
   [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 fi
 

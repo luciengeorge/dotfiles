@@ -44,7 +44,7 @@ fi
 
 cd "$CURRENT_DIR"
 
-for name in aliases gitconfig zshrc p10k.zsh irbrc pryrc rspec; do
+for name in aliases zshrc p10k.zsh irbrc pryrc rspec; do
   echo "-----> Symlinking $name"
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
@@ -77,6 +77,7 @@ done
 if [[ `uname` =~ "darwin" ]]; then
   SUBL_PATH=~/Library/Application\ Support/Sublime\ Text
   if [ -d "$SUBL_PATH" ]; then
+    echo "-----> Importing Sublime Text settings"
     mkdir -p $SUBL_PATH/Packages/User $SUBL_PATH/Installed\ Packages
     backup "$SUBL_PATH/Packages/User/Preferences.sublime-settings"
     curl https://sublime.wbond.net/Package%20Control.sublime-package > $SUBL_PATH/Installed\ Packages/Package\ Control.sublime-package
@@ -87,11 +88,16 @@ fi
 
 if [[ `uname` =~ "Darwin" ]]; then
   if [[ ! `system_profiler SPHardwareDataType | grep Serial` =~ "XFN4C7FHLX" ]]; then
+    echo "-----> Generating gitconfig"
+    target="$HOME/.gitconfig"
+    backup $target
+    symlink $PWD/gitconfig $target
+
     echo "-----> Setting ssh configs"
     target=~/.ssh/config
     backup $target
     symlink $PWD/config $target
-    ssh-add -K ~/.ssh/id_ed25519
+    ssh-add --apple-use-keychain ~/.ssh/id_ed25519
   fi
 fi
 
