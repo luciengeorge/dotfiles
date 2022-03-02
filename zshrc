@@ -10,8 +10,10 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
 
-[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+if [[ `system_profiler SPHardwareDataType | grep Serial` =~ "XFN4C7FHLX"  ]]; then
+  [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+  [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+fi
 
 export EDITOR="vim"
