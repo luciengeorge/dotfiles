@@ -18,10 +18,12 @@ backup() {
 }
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "-----> Installing Oh My Zsh"
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]; then
+  echo '-----> Installing powerlevel10k theme'
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
 
@@ -31,21 +33,23 @@ ZSH_PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
 mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR"
 
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
+  echo "-----> Installing zsh-syntax-highlighting"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting
 fi
 
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ]; then
+  echo "-----> Installing zsh-autosuggestions"
   git clone https://github.com/zsh-users/zsh-autosuggestions
 fi
 
 cd "$CURRENT_DIR"
 
-for name in aliases gitconfig zshrc; do
+for name in aliases gitconfig zshrc p10k.zsh irbrc pryrc rspec; do
+  echo "-----> Symlinking $name"
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
     backup $target
     if [ "$SPIN" ] then;
-      file=~/dotfiles/$1
       symlink $HOME/dotfiles/$name $target
     else
       symlink $PWD/$name $target
@@ -60,30 +64,35 @@ else
 fi
 
 for name in settings.json keybindings.json; do
+  echo "-----> VSCode settings and keybindings imported"
   target="$CODE_PATH/$name"
   backup $target
   if [ "$SPIN" ] then;
-    file=~/dotfiles/$1
     symlink $HOME/dotfiles/$name $target
   else
     symlink $PWD/$name $target
   fi
 done
 
+if [[ `uname` =~ "darwin" ]]; then
+  SUBL_PATH=~/Library/Application\ Support/Sublime\ Text
+  if [ -d "$SUBL_PATH" ]; then
+    mkdir -p $SUBL_PATH/Packages/User $SUBL_PATH/Installed\ Packages
+    backup "$SUBL_PATH/Packages/User/Preferences.sublime-settings"
+    curl https://sublime.wbond.net/Package%20Control.sublime-package > $SUBL_PATH/Installed\ Packages/Package\ Control.sublime-package
+    ln -s $PWD/Preferences.sublime-settings $SUBL_PATH/Packages/User/Preferences.sublime-settings
+    ln -s $PWD/Package\ Control.sublime-settings $SUBL_PATH/Packages/User/Package\ Control.sublime-settings
+  fi
+fi
+
 if [[ `uname` =~ "Darwin" ]]; then
-  target=~/.ssh/config
-  backup $target
-  symlink $PWD/config $target
-  ssh-add -K ~/.ssh/id_ed25519
+  if [[ ! `system_profiler SPHardwareDataType | grep Serial` =~ "XFN4C7FHLX" ]]; then
+    echo "-----> Setting ssh configs"
+    target=~/.ssh/config
+    backup $target
+    symlink $PWD/config $target
+    ssh-add -K ~/.ssh/id_ed25519
+  fi
 fi
 
 exec zsh
-
-# symlink zshrc ~/.zshrc
-# symlink p10k.zsh ~/.p10k.zsh
-# symlink aliases ~/.aliases
-# symlink gitconfig ~/.gitconfig
-
-# if ! command -v bat &> /dev/null; then
-#   sudo apt-get install -y bat
-# fi

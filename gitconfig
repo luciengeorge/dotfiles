@@ -46,7 +46,7 @@
   mergeoptions = --no-edit
 
 [user]
-	email = lucien.george@shopify.com
+  email = "if [[ `system_profiler SPHardwareDataType | grep Serial` =~ 'XFN4C7FHLX' ]]; then EMAIL='lucien.george@shopify.com'; else EMAIL='luciengeorge95@gmail.com'; fi; $EMAIL"
 	name = Lucien George
 
 [filter "lfs"]
