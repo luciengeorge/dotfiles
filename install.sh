@@ -49,7 +49,7 @@ for name in aliases gitconfig zshrc p10k.zsh irbrc pryrc rspec; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
     backup $target
-    if [ "$SPIN" ] then;
+    if [ "$SPIN" ]; then
       symlink $HOME/dotfiles/$name $target
     else
       symlink $PWD/$name $target
@@ -57,17 +57,17 @@ for name in aliases gitconfig zshrc p10k.zsh irbrc pryrc rspec; do
   fi
 done
 
-if [ "$SPIN" ] then;
+if [ "$SPIN" ]; then
   CODE_PATH=~/.vscode-server/data/Machine
 else
   CODE_PATH=~/Library/Application\ Support/Code/User
 fi
 
+echo "-----> Importing VSCode settings and keybindings"
 for name in settings.json keybindings.json; do
-  echo "-----> VSCode settings and keybindings imported"
   target="$CODE_PATH/$name"
   backup $target
-  if [ "$SPIN" ] then;
+  if [ "$SPIN" ]; then
     symlink $HOME/dotfiles/$name $target
   else
     symlink $PWD/$name $target
