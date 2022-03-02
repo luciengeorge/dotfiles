@@ -5,9 +5,68 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
+alias kitt="open https://kitt.lewagon.com/"
+
+# Open tickets page
+tickets() {
+  open https://kitt.lewagon.com/camps/$1/tickets
+}
+
+camp() {
+  open https://kitt.lewagon.com/camps/$1
+}
+
+# Open calendar page
+calendar() {
+  open https://kitt.lewagon.com/camps/$1/calendar
+}
+
+# Open classmates page
+classmates() {
+  open https://kitt.lewagon.com/camps/$1/classmates
+}
+
+# Open dashboard page
+dashboard() {
+  open https://kitt.lewagon.com/camps/$1/day_dashboard
+}
+
+# Open statistics page
+stats() {
+  open https://kitt.lewagon.com/camps/$1/tickets/day_dashboard
+}
+
+# search alumni on kitt
+kittsearch() {
+  open https://kitt.lewagon.com/alumni\?search=$1
+}
+
+# alumni show
+alumni() {
+  open https://kitt.lewagon.com/alumni/$1
+}
+
+# feedbacks index
+feedbacks() {
+  open https://kitt.lewagon.com/camps/$1/feedbacks
+}
+
+# products
+products() {
+  open https://kitt.lewagon.com/camps/$1/products
+}
+
 # Open webpage
 web() {
   open https://www.$1
+}
+
+# Open slack
+alias slack="open -a 'slack'"
+
+# Open an app
+app() {
+  open -a "$1"
 }
 
 # Open repo
@@ -28,6 +87,16 @@ pr() {
 # Open issues of repo
 issues() {
   open https://www.github.com/$1/$2/issues
+}
+
+# navigate in code folder
+goto() {
+  cd ~/src/$1
+}
+
+# navigate in folder and open
+sttt() {
+  cd ~/src/$1; stt;
 }
 
 # start mongodb

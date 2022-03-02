@@ -1,0 +1,38 @@
+{
+  "bootstrapped": true,
+  "in_process_packages":
+  [
+  ],
+  "installed_packages":
+  [
+    "A File Icon",
+    "AdvancedNewFile",
+    "All Autocomplete",
+    "ayu",
+    "BracketHighlighter",
+    "Color Highlight",
+    "Emmet",
+    "ERB Snippets",
+    "ESLint",
+    "Git",
+    "GitGutter",
+    "Latest Migration",
+    "MagicPython",
+    "MarkdownEditing",
+    "Package Control",
+    "Rails Completions",
+    "Rails Latest Migration",
+    "Rails Partial",
+    "React ES6 Snippets",
+    "SCSS",
+    "SideBarEnhancements",
+    "SideBarMenuAdvanced",
+    "SublimeLinter",
+    "SublimeLinter-eslint",
+    "SublimeLinter-rubocop",
+    "Tailwind CSS Autocomplete",
+    "Tailwind CSS Docs",
+    "Theme - Brogrammer",
+    "Theme - Darkmatter",
+  ],
+}
