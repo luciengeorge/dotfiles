@@ -8,7 +8,7 @@ source $ZSH/oh-my-zsh.sh
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
-if [[ "$SPIN" ]] || [[ "$SPIN" -o `system_profiler SPHardwareDataType | grep Serial` =~ "XFN4C7FHLX"  ]]; then
+if [ "$SPIN" ] || [[ `system_profiler SPHardwareDataType | grep Serial` =~ "XFN4C7FHLX"  ]]; then
   [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
   [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
