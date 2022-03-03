@@ -36,4 +36,8 @@ fi
 export BUNDLER_EDITOR=code
 export EDITOR="vim"
 
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+if [ "$SPIN" ]; then
+  [[ -f ~/.p10kspin.zsh ]] && source ~/.p10kspin.zsh
+else
+  [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+fi
