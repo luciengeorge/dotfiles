@@ -44,7 +44,7 @@ fi
 
 cd "$CURRENT_DIR"
 
-for name in aliases zshrc p10k.zsh irbrc pryrc rspec; do
+for name in aliases zshrc irbrc pryrc rspec; do
   echo "-----> Symlinking $name"
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
@@ -58,8 +58,16 @@ for name in aliases zshrc p10k.zsh irbrc pryrc rspec; do
 done
 
 if [ "$SPIN" ]; then
+  echo "-----> Symlinking .p10kspin.zsh"
+  target="$HOME/.p10kspin.zsh"
+  backup $target
+  symlink $PWD/p10kspin.zsh $target
   CODE_PATH=~/.vscode-server/data/Machine
 else
+  echo "-----> Symlinking .p10k.zsh"
+  target="$HOME/.p10k.zsh"
+  backup $target
+  symlink $PWD/p10k.zsh $target
   CODE_PATH=~/Library/Application\ Support/Code/User
 fi
 
