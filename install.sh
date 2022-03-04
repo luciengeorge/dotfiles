@@ -95,7 +95,7 @@ if [[ `uname` =~ "darwin" ]]; then
 fi
 
 if [[ `uname` =~ "Darwin" ]]; then
-  if [[ ! `system_profiler SPHardwareDataType | grep Serial` =~ "XFN4C7FHLX" ]]; then
+  if command -v spin &> /dev/null; then
     echo "-----> Generating gitconfig"
     target="$HOME/.gitconfig"
     backup $target
