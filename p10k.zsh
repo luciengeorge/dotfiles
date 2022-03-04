@@ -226,7 +226,9 @@ fi
   # POWERLEVEL9K_DIR_NOT_WRITABLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   # Custom prefix.
-  # typeset -g POWERLEVEL9K_DIR_PREFIX='%fSpin 🌀 '
+  if [[ ! `uname` =~ "Darwin" ]]; then
+    typeset -g POWERLEVEL9K_DIR_PREFIX='%fSpin 🌀 '
+  fi
 
   # POWERLEVEL9K_DIR_CLASSES allows you to specify custom icons for different directories.
   # It must be an array with 3 * N elements. Each triplet consists of:

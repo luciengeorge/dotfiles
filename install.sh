@@ -82,7 +82,7 @@ for name in settings.json keybindings.json; do
   fi
 done
 
-if [[ `uname` =~ "darwin" ]]; then
+if [[ `uname` =~ "Darwin" ]]; then
   SUBL_PATH=~/Library/Application\ Support/Sublime\ Text
   if [ -d "$SUBL_PATH" ]; then
     echo "-----> Importing Sublime Text settings"
