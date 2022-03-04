@@ -81,7 +81,8 @@
     "*.ejson": "json"
   },
   "remote.SSH.defaultExtensions": [
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "GitHub.copilot"
   ],
   "github.copilot.enable": {
     "*": true,
