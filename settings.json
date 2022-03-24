@@ -90,4 +90,5 @@
     "plaintext": true,
     "markdown": false
   },
+  "editor.accessibilitySupport": "off",
 }
