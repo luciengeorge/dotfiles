@@ -88,7 +88,7 @@
     "*": true,
     "yaml": true,
     "plaintext": true,
-    "markdown": false
+    "markdown": true
   },
-  "editor.accessibilitySupport": "off",
+  "editor.accessibilitySupport": "off"
 }

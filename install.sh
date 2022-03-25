@@ -101,4 +101,9 @@ if [[ `uname` =~ "Darwin" ]]; then
   fi
 fi
 
+if [ `gem list -i "^solargraph$"` = "false" ]; then
+  echo "-----> Installing solargraph"
+  `gem install solargraph`
+fi
+
 exec zsh
