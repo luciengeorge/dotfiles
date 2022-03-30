@@ -103,7 +103,7 @@ fi
 
 if [ `gem list -i "^solargraph$"` = "false" ]; then
   echo "-----> Installing solargraph"
-  `gem install solargraph`
+  gem install solargraph
 fi
 
 exec zsh

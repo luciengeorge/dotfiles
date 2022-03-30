@@ -82,7 +82,8 @@
   },
   "remote.SSH.defaultExtensions": [
     "eamodio.gitlens",
-    "GitHub.copilot"
+    "GitHub.copilot",
+    "castwide.solargraph"
   ],
   "github.copilot.enable": {
     "*": true,
@@ -90,5 +91,6 @@
     "plaintext": true,
     "markdown": true
   },
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "sorbet.enabled": true
 }
