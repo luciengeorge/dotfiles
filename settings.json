@@ -92,5 +92,6 @@
     "markdown": true
   },
   "editor.accessibilitySupport": "off",
-  "sorbet.enabled": true
+  "sorbet.enabled": true,
+  "workbench.editor.wrapTabs": true
 }
