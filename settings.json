@@ -93,5 +93,6 @@
   },
   "editor.accessibilitySupport": "off",
   "sorbet.enabled": true,
-  "workbench.editor.wrapTabs": true
+  "workbench.editor.wrapTabs": true,
+  "explorer.openEditors.sortOrder": "alphabetical"
 }
