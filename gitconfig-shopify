@@ -11,7 +11,7 @@
 
 [core]
   pager = less -FRSX
-	editor = vim
+  editor = vim
 
 [alias]
   co = checkout
@@ -37,10 +37,10 @@
 
   # Removes a file from the index
   unstage = reset HEAD --
-	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+  recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 
 [help]
-	autocorrect = 20
+  autocorrect = 20
 
 [branch "master"]
   mergeoptions = --no-edit
@@ -49,14 +49,14 @@
   mergeoptions = --no-edit
 
 [user]
-  email = luciengeorge95@gmail.com
-	name = Lucien George
+  email = lucien.george@shopify.com
+  name = Lucien George
 
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
 
 [init]
-	defaultBranch = main
+  defaultBranch = main

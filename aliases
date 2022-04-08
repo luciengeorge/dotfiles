@@ -74,14 +74,25 @@ repo() {
   if [ $# -eq 1 ];
     then
       open https://www.github.com/$1
+  elif [ $# -eq 2 ];
+    then
+      open https://www.github.com/$1/$2
   else
-    open https://www.github.com/$1/$2
+    echo "Usage: repo [user] [repo]"
   fi
 }
 
 # Open PRs of repo
 pr() {
-  open https://www.github.com/$1/$2/pulls
+  if [ $# -eq 2 ];
+    then
+      open https://www.github.com/$1/$2/pulls
+  elif [ $# -eq 3 ];
+    then
+      open https://www.github.com/$1/$2/pull/$3
+  else
+    echo "Usage: pr <owner> <repo> [<pr_number>]"
+  fi
 }
 
 # Open issues of repo
@@ -135,9 +146,6 @@ alias rdbc="rails db:create"
 # rails db:drop db:create db:migrate db:seed
 alias rdb="rails db:drop db:create db:migrate db:seed"
 
-# rake db:import_from_aws
-alias aws="rake db:import_from_aws && rake s3:sync_prod_bucket_to_dev_bucket"
-
 # jupyter notebook
 alias jn="jupyter notebook"
 
@@ -147,5 +155,7 @@ jslides() {
 }
 
 # Delete squashed and merged branches
-alias sweep='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias sweep='git checkout -q main && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+
+# Alias for journalctl in spin
 alias jc='journalctl'
