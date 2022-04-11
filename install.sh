@@ -104,9 +104,12 @@ else
   ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 fi
 
-if [ `gem list -i "^solargraph$"` = "false" ]; then
-  echo "-----> Installing solargraph"
-  gem install solargraph
+if [ "$SPIN" ] && ( ! command -v batcat &> /dev/null; ); then
+  echo "-----> Installing bat"
+  sudo apt-get install -y bat
+elif [[ `uname` =~ "Darwin" ]] && ( ! command -v bat &> /dev/null; ); then
+  echo "-----> Installing bat"
+  brew install bat
 fi
 
 exec zsh
