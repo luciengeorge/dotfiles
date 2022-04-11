@@ -1,7 +1,7 @@
 symlink() {
   file=$1
   link=$2
-  if [ ! -e "$link" ]; then
+  if [ ! -e "$link" ]; then # link doesn't exist
     echo "-----> Symlinking your new $link"
     ln -fs $file $link
   fi
@@ -9,8 +9,8 @@ symlink() {
 
 backup() {
   target=$1
-  if [ -e "$target" ]; then
-    if [ ! -L "$target" ]; then
+  if [ -e "$target" ]; then # file exists
+    if [ ! -L "$target" ]; then # file is not a symbolic link
       mv "$target" "$target.backup"
       echo "-----> Moved your old $target config file to $target.backup"
     fi
