@@ -83,7 +83,10 @@
   "remote.SSH.defaultExtensions": [
     "eamodio.gitlens",
     "GitHub.copilot",
-    "castwide.solargraph"
+    "castwide.solargraph",
+    "aliariff.auto-add-brackets",
+    "aaron-bond.better-comments",
+    "kaiwood.endwise"
   ],
   "github.copilot.enable": {
     "*": true,
