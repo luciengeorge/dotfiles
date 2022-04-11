@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
-plugins=(gitfast git last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search)
+plugins=(gitfast git last-working-dir common-aliases sublime zsh-syntax-highlighting zsh-autosuggestions history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 # Store your own aliases in the ~/.aliases file and load it
