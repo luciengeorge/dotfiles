@@ -2,8 +2,7 @@
 alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
-# Quickly serve the current directory as HTTP
-alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+alias serve='bin/server -b 127.0.0.1'
 
 alias kitt="open https://kitt.lewagon.com/"
 
@@ -120,31 +119,31 @@ alias wds='webpack-dev-server'
 alias nwds='nvm use && webpack-dev-server'
 
 # rails console
-alias rc="rails c"
+alias rc="bin/rails c"
 
 # rails server
-alias rs="rails s"
+alias rs="bin/rails s"
 
 # rails db:migrate
-alias rdbm="rails db:migrate"
+alias rdbm="bin/rails db:migrate"
 
 # rails db:rollback
-alias rdbr="rails db:rollback"
+alias rdbr="bin/rails db:rollback"
 
 # rails db:seed
-alias rdbs="rails db:seed"
+alias rdbs="bin/rails db:seed"
 
 # rails db:reset
 alias rdbrst="rails db:reset"
 
 # rails db:drop
-alias rdbd="rails db:drop"
+alias rdbd="bin/rails db:drop"
 
 # rails db:create
-alias rdbc="rails db:create"
+alias rdbc="bin/rails db:create"
 
 # rails db:drop db:create db:migrate db:seed
-alias rdb="rails db:drop db:create db:migrate db:seed"
+alias rdb="bin/rails db:drop db:create db:migrate db:seed"
 
 # jupyter notebook
 alias jn="jupyter notebook"
