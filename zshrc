@@ -37,3 +37,5 @@ export BUNDLER_EDITOR=code
 export EDITOR="vim"
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+eval $(thefuck --alias)

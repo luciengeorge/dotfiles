@@ -97,5 +97,17 @@
   "editor.accessibilitySupport": "off",
   "sorbet.enabled": true,
   "workbench.editor.wrapTabs": true,
-  "explorer.openEditors.sortOrder": "alphabetical"
+  "explorer.openEditors.sortOrder": "alphabetical",
+  "ruby.useLanguageServer": false,
+  "ruby.codeCompletion": false,
+  "ruby.intellisense": false,
+  "ruby.format": false,
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnSave": true
+  },
+  "byesig.fold": false,
+  "byesig.enabled": true,
+  "byesig.opacity": 0.5,
+  "byesig.showIcon": false
 }
