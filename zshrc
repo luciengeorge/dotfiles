@@ -31,11 +31,10 @@ if [ ! "$SPIN" ]; then
   unalias rm # No interactive rm by default (brought by plugins/common-aliases)
   export HOMEBREW_NO_ANALYTICS=1
   [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+  eval $(thefuck --alias)
 fi
 
 export BUNDLER_EDITOR=code
 export EDITOR="vim"
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-eval $(thefuck --alias)
