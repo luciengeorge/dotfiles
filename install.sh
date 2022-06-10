@@ -107,6 +107,9 @@ fi
 if [ "$SPIN" ] && ( ! command -v batcat &> /dev/null; ); then
   echo "-----> Installing bat"
   sudo apt-get install -y bat
+  mkdir -p ~/.local/bin
+  ln -s /usr/bin/batcat ~/.local/bin/bat
+  alias bat='batcat'
 elif [[ `uname` =~ "Darwin" ]] && ( ! command -v bat &> /dev/null; ); then
   echo "-----> Installing bat"
   brew install bat
