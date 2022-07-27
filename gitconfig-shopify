@@ -63,3 +63,6 @@
 
 [pull]
   rebase = true
+
+[fetch]
+  prune = true
