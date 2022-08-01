@@ -112,5 +112,6 @@
   "byesig.fold": false,
   "byesig.enabled": true,
   "byesig.opacity": 0.5,
-  "byesig.showIcon": false
+  "byesig.showIcon": false,
+  "editor.linkedEditing": true
 }
