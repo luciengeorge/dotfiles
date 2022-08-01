@@ -13,7 +13,9 @@
   "editor.snippetSuggestions": "top",
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
-    "erb": "html"
+    "erb": "html",
+    "*.erb": "html",
+    "ruby": "html"
   },
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
