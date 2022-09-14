@@ -169,8 +169,10 @@ jslides() {
 # Delete squashed and merged branches
 alias sweep='git checkout -q main && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 
+###### SPIN ######
 # Alias for journalctl in spin
 alias jc='journalctl'
 
-alias setup-spin="bundle && rdbm && bin/rails dev:custom_storefront:setup"
+alias setup-spin="update && bin/rails dev:custom_storefront:setup && restart"
+alias up="update && restart"
 alias custom-sf="bin/rails dev:custom_storefront:setup"
