@@ -173,6 +173,6 @@ alias sweep='git checkout -q main && git for-each-ref refs/heads/ "--format=%(re
 # Alias for journalctl in spin
 alias jc='journalctl'
 
-alias setup-spin="update && bin/rails dev:custom_storefront:setup && restart"
-alias up="update && restart"
+alias up="git pull && update && bin/rails dev:custom_storefront:setup && restart"
+alias restart="update && restart"
 alias custom-sf="bin/rails dev:custom_storefront:setup"
