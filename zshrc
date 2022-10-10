@@ -29,9 +29,9 @@ fi
 
 if [ ! "$SPIN" ]; then
   unalias rm # No interactive rm by default (brought by plugins/common-aliases)
-  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
   export HOMEBREW_NO_ANALYTICS=1
   [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
   eval $(thefuck --alias)
 fi
 
