@@ -56,9 +56,6 @@
   },
   "python.formatting.provider": "yapf",
   "python.terminal.activateEnvironment": false,
-  "ruby.lint": {
-    "rubocop": true
-  },
   "telemetry.telemetryLevel": "off",
   "window.restoreWindows": "none",
   "workbench.iconTheme": "vscode-great-icons",
@@ -100,10 +97,6 @@
   "sorbet.enabled": true,
   "workbench.editor.wrapTabs": true,
   "explorer.openEditors.sortOrder": "alphabetical",
-  "ruby.useLanguageServer": false,
-  "ruby.codeCompletion": false,
-  "ruby.intellisense": false,
-  "ruby.format": false,
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnSave": true,
