@@ -173,6 +173,13 @@ alias sweep='git checkout -q main && git for-each-ref refs/heads/ "--format=%(re
 # Alias for journalctl in spin
 alias jc='journalctl'
 
-alias up="git pull && update && bin/rails dev:custom_storefront:setup && restart"
-alias restart="update && restart"
+# setup spin instance
+alias up="git pull && update && restart && bin/rails dev:custom_storefront:setup"
+
+# create new custom storefront app
 alias custom-sf="bin/rails dev:custom_storefront:setup"
+
+# kill server
+killserver() {
+  kill -9 $(lsof -ti:$1)
+}
