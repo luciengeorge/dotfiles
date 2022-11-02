@@ -1,13 +1,17 @@
 [core]
-  editor = code -w
+  editor = vim
   pager = diff-so-fancy | less --tabs=4 -RFX
+
 [user]
   name = Lucien George
   email = luciengeorge95@gmail.com
+
 [init]
   defaultBranch = main
+
 [include]
   path = /Users/lucien/.config/dev/gitconfig
+
 [alias]
   co = checkout
   st = status -sb
@@ -33,31 +37,51 @@
   # Removes a file from the index
   unstage = reset HEAD --
   recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+
 [help]
   autocorrect = 20
+
 [push]
   default = simple
   autoSetupRemote = true
+
 [branch "main"]
   mergeoptions = --no-edit
+
+[branch "master"]
+  mergeoptions = --no-edit
+
 [filter "lfs"]
   process = git-lfs filter-process
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+
 [pull]
-  rebase = false
+  rebase = true
+
+[fetch]
+  prune = true
+
 [diff]
   colorMoved = zebra
+
 [interactive]
   diffFilter = diff-so-fancy --patch
+
 [color]
-  ui = true
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+
 [color "diff"]
   meta = 11
   frag = magenta bold
@@ -66,3 +90,7 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+
+[color "branch"]
+  current = green
+  remote = yellow
