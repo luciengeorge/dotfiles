@@ -1,18 +1,14 @@
-[color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
-  ui = auto
-
-[color "branch"]
-  current = green
-  remote = yellow
-
 [core]
-  pager = less -FRSX
-  editor = vim
-
+  editor = code -w
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RFX
+[user]
+  name = Lucien George
+  email = lucien.george@shopify.com
+[init]
+  defaultBranch = main
+[include]
+  path = /Users/lucien/.config/dev/gitconfig
 [alias]
   co = checkout
   st = status -sb
@@ -38,31 +34,49 @@
   # Removes a file from the index
   unstage = reset HEAD --
   recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
-
 [help]
   autocorrect = 20
-
-[branch "master"]
-  mergeoptions = --no-edit
-
+[push]
+  default = simple
+  autoSetupRemote = true
 [branch "main"]
   mergeoptions = --no-edit
-
-[user]
-  email = lucien.george@shopify.com
-  name = Lucien George
-
 [filter "lfs"]
   process = git-lfs filter-process
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
-
-[init]
-  defaultBranch = main
-
 [pull]
-  rebase = true
-
-[fetch]
-  prune = true
+  rebase = false
+[diff]
+  colorMoved = zebra
+[interactive]
+  diffFilter = diff-so-fancy --patch
+  diffFilter = diff-so-fancy --patch
+[color]
+  ui = true
+  ui = true
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  func = 146 bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+  meta = 11
+  frag = magenta bold
+  func = 146 bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
