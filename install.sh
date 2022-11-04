@@ -98,11 +98,23 @@ else
   target="$HOME/.gitconfig"
   backup $target
   symlink $PWD/gitconfig $target
+
+  # echo "-----> Setting ssh configs"
+  # target=~/.ssh/config
+  # backup $target
+  # symlink $PWD/config $target
+  # ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 fi
 
-if [ "$SPIN" ]; then
-  npm install -g diff-so-fancy
-else
+if [ "$SPIN" ] && ( ! command -v batcat &> /dev/null; ); then
+  echo "-----> Installing bat"
+  sudo apt-get install -y bat
+  mkdir -p ~/.local/bin
+  ln -s /usr/bin/batcat ~/.local/bin/bat
+  alias bat='batcat'
+fi
+
+if [ ! "$SPIN" ]; then
   exec zsh
 fi
 
