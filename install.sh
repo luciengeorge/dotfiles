@@ -87,7 +87,7 @@ if test `uname` = "Darwin"; then
 fi
 
 if test `uname` = "Darwin" && ( command -v spin &> /dev/null; ) || test `uname` = "Linux"; then
-  echo "-----> Generating gitconfig"
+  echo "-----> Generating shopify gitconfig"
   target="$HOME/.gitconfig"
   backup $target
   symlink $PWD/gitconfig-shopify $target
@@ -96,12 +96,7 @@ else
   target="$HOME/.gitconfig"
   backup $target
   symlink $PWD/gitconfig $target
-
-  # echo "-----> Setting ssh configs"
-  # target=~/.ssh/config
-  # backup $target
-  # symlink $PWD/config $target
-  # ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 fi
 
+echo "-----> install.sh done ✅"
 exec zsh
