@@ -100,5 +100,8 @@ else
   symlink $PWD/gitconfig $target
 fi
 
+if [ ! "$SPIN" ]; then
+  exec zsh
+fi
+
 echo "-----> install.sh done ✅"
-exec zsh
