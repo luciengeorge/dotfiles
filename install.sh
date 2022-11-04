@@ -100,7 +100,9 @@ else
   symlink $PWD/gitconfig $target
 fi
 
-if [ ! "$SPIN" ]; then
+if [ "$SPIN" ]; then
+  npm install -g diff-so-fancy
+else
   exec zsh
 fi
 
