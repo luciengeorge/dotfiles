@@ -1,3 +1,5 @@
+#!/bin/sh
+
 symlink() {
   file=$1
   link=$2
@@ -27,10 +29,10 @@ if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
 
-CURRENT_DIR=`pwd`
+CURRENT_DIR="$(pwd)"
 ZSH_PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
 
-mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR"
+mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR" || exit
 
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
   echo "-----> Installing zsh-syntax-highlighting"
@@ -42,7 +44,7 @@ if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions
 fi
 
-cd "$CURRENT_DIR"
+cd "$CURRENT_DIR" || exit
 
 for name in aliases p10k.zsh zshrc irbrc pryrc rspec; do
   echo "-----> Symlinking $name"
@@ -74,7 +76,7 @@ for name in settings.json keybindings.json; do
   fi
 done
 
-if test `uname` = "Darwin"; then
+if test "$(uname)" = "Darwin"; then
   SUBL_PATH=~/Library/Application\ Support/Sublime\ Text
   if [ -d "$SUBL_PATH" ]; then
     echo "-----> Importing Sublime Text settings"
@@ -86,7 +88,7 @@ if test `uname` = "Darwin"; then
   fi
 fi
 
-if test `uname` = "Darwin" && ( command -v spin &> /dev/null; ) || test `uname` = "Linux"; then
+if test "$(uname)" = "Darwin" && ( command -v spin &> /dev/null; ) || test "$(uname)" = "Linux"; then
   echo "-----> Generating shopify gitconfig"
   target="$HOME/.gitconfig"
   backup $target
