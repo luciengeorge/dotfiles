@@ -74,7 +74,7 @@ for name in settings.json keybindings.json; do
   fi
 done
 
-if [[ `uname` =~ "Darwin" ]]; then
+if [ `uname` =~ "Darwin" ]; then
   SUBL_PATH=~/Library/Application\ Support/Sublime\ Text
   if [ -d "$SUBL_PATH" ]; then
     echo "-----> Importing Sublime Text settings"
@@ -86,7 +86,7 @@ if [[ `uname` =~ "Darwin" ]]; then
   fi
 fi
 
-if [[ `uname` =~ "Darwin" ]] && ( command -v spin &> /dev/null; ) || [[ `uname` =~ "Linux" ]]; then
+if [ `uname` =~ "Darwin" ] && ( command -v spin &> /dev/null; ) || [ `uname` =~ "Linux" ]; then
   echo "-----> Generating gitconfig"
   target="$HOME/.gitconfig"
   backup $target
