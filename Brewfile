@@ -50,5 +50,11 @@ cask 'rectangle'
 cask 'sip'
 cask 'spotify'
 cask 'spark'
+cask 'nucleo'
+cask 'spline'
+cask 'zoom'
+cask 'whatsapp'
+
+mas 'shazam', id: 897118787
 
 tap 'shopify/shopify'
