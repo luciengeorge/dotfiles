@@ -54,6 +54,7 @@ cask 'nucleo'
 cask 'spline'
 cask 'zoom'
 cask 'whatsapp'
+cask 'alfred'
 
 mas 'shazam', id: 897118787
 
