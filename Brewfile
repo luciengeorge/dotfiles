@@ -55,6 +55,7 @@ cask 'spline'
 cask 'zoom'
 cask 'whatsapp'
 cask 'alfred'
+cask 'dash'
 
 mas 'shazam', id: 897118787
 
