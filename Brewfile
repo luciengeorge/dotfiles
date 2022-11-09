@@ -34,6 +34,7 @@ brew 'pyenv-virtualenv'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 brew 'zsh-autosuggestions'
+brew 'gist'
 
 cask 'ngrok'
 cask 'nordvpn'
