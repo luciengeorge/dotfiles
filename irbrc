@@ -8,3 +8,5 @@ if defined?(Pry)
   Pry.start
   exit
 end
+
+IRB.conf[:USE_AUTOCOMPLETE] = false
