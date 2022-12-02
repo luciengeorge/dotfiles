@@ -64,7 +64,7 @@
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "newUntitledFile",
   "editor.inlineSuggest.enabled": true,
-  "workbench.colorTheme": "Community Material Theme Ocean",
+  "workbench.colorTheme": "GitHub Dark",
   "editor.fontSize": 12,
   "editor.trimAutoWhitespace": true,
   "editor.useTabStops": true,
