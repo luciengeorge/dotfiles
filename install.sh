@@ -114,6 +114,11 @@ if [ "$SPIN" ] && ( ! command -v batcat &> /dev/null; ); then
   alias bat='batcat'
 fi
 
+if [ "$SPIN" ]; then
+  echo "-----> Installing diff-so-fancy"
+  npm install -g diff-so-fancy
+fi
+
 if [ ! "$SPIN" ]; then
   exec zsh
 fi
