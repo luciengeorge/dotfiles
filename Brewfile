@@ -58,6 +58,7 @@ cask 'zoom'
 cask 'whatsapp'
 cask 'alfred'
 cask 'dash'
+cask 'raycast'
 
 mas 'shazam', id: 897118787
 
