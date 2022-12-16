@@ -38,4 +38,8 @@ fi
 export BUNDLER_EDITOR=code
 export EDITOR="vim"
 
+if ( command -v op &> /dev/null; ); then
+  eval "$(op completion zsh)"; compdef _op op
+fi
+
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

@@ -99,11 +99,11 @@ else
   backup $target
   symlink $PWD/gitconfig $target
 
-  # echo "-----> Setting ssh configs"
-  # target=~/.ssh/config
-  # backup $target
-  # symlink $PWD/config $target
-  # ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+  echo "-----> Setting ssh configs"
+  target=~/.ssh/config
+  backup $target
+  symlink $PWD/config $target
+  ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 fi
 
 if [ "$SPIN" ] && ( ! command -v batcat &> /dev/null; ); then
