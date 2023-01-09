@@ -106,5 +106,6 @@
   "byesig.enabled": true,
   "byesig.opacity": 0.5,
   "byesig.showIcon": false,
-  "editor.linkedEditing": true
+  "editor.linkedEditing": true,
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB"
 }
