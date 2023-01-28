@@ -22,12 +22,15 @@ backup() {
 if ! command -v brew &> /dev/null; then
   echo "-----> Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 if [ -f "$PWD/Brewfile" ]; then
   echo "-----> Running brew bundle"
   brew bundle
 fi
+
+gh auth login -s 'user:email' -w
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "-----> Installing Oh My Zsh"
