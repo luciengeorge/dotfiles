@@ -19,6 +19,16 @@ backup() {
   fi
 }
 
+if ! command -v brew &> /dev/null; then
+  echo "-----> Installing Homebrew"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+if [ -f "$PWD/Brewfile" ]; then
+  echo "-----> Running brew bundle"
+  brew bundle
+fi
+
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "-----> Installing Oh My Zsh"
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
