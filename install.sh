@@ -28,9 +28,9 @@ if test "$(uname)" = "Darwin" && ! command -v brew &> /dev/null; then
     echo "-----> Running brew bundle"
     brew bundle
   fi
-fi
 
-gh auth login -s 'user:email' -w
+  gh auth login -s 'user:email' -w
+fi
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "-----> Installing Oh My Zsh"
