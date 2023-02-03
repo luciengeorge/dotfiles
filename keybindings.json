@@ -1,17 +1,29 @@
 [
-  {
-    "key": "ctrl+shift+v",
-    "command": "pasteAndIndent.action",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+shift+v",
-    "command": "pasteAndIndent.action",
-    "when": "editorTextFocus && !editorReadonly"
-  },
+//   {
+//     "key": "cmd+v",
+//     "command": "pasteAndIndent.action",
+//     "when": "editorTextFocus && !editorReadonly"
+//   },
+//   {
+//     "key": "cmd+v",
+//     "command": "editor.action.clipboardPasteAction",
+//     "when": "!editorTextFocus"
+//   },
+//   {
+//     "key": "cmd+shift+v",
+//     "command": "editor.action.clipboardPasteAction",
+//     "when": "editorTextFocus && !editorReadonly"
+//   },
   {
     "key": "tab",
     "command": "-editor.emmet.action.expandAbbreviation",
     "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-  }
+  },
 ]
+
+// [
+//   {
+//     "key": "cmd+v",
+//     "command": "pasteAndIndent.action"
+//   }
+// ]

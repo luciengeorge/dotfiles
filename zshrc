@@ -27,10 +27,6 @@ else
   export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-type -a pyenv > /dev/null && eval "$(pyenv init --path)"
-
 if [ ! "$SPIN" ]; then
   unalias rm # No interactive rm by default (brought by plugins/common-aliases)
   export HOMEBREW_NO_ANALYTICS=1
@@ -38,6 +34,10 @@ if [ ! "$SPIN" ]; then
   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
   eval $(thefuck --alias)
 fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+type -a pyenv > /dev/null && eval "$(pyenv init --path)"
 
 export BUNDLER_EDITOR=code
 export EDITOR="vim"
