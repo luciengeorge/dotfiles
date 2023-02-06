@@ -98,7 +98,7 @@
   "workbench.editor.wrapTabs": true,
   "explorer.openEditors.sortOrder": "alphabetical",
   "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.defaultFormatter": "jnbt.vscode-rufo",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true
   },
@@ -107,5 +107,6 @@
   "byesig.opacity": 0.5,
   "byesig.showIcon": false,
   "editor.linkedEditing": true,
-  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB"
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "editor.stickyScroll.enabled": true
 }
