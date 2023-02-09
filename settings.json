@@ -108,5 +108,6 @@
   "byesig.showIcon": false,
   "editor.linkedEditing": true,
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
-  "editor.stickyScroll.enabled": true
+  "editor.stickyScroll.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open"
 }
