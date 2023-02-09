@@ -25,9 +25,10 @@ if [ ! "$SPIN" ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+  export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 fi
 
-export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 
 if [ ! "$SPIN" ]; then
   unalias rm # No interactive rm by default (brought by plugins/common-aliases)
