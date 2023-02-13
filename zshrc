@@ -49,4 +49,8 @@ if ( command -v op &> /dev/null; ); then
   eval "$(op completion zsh)"; compdef _op op
 fi
 
+if ( command -v heroku &> /dev/null; ); then
+  eval "$(heroku autocomplete:script zsh)"
+fi
+
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
