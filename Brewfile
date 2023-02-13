@@ -1,66 +1,65 @@
 # frozen_string_literal: true
 # run `brew bundle` to run this file
 
-brew 'cask'
-brew 'zsh'
-brew 'romkatv/powerlevel10k/powerlevel10k'
-brew 'git'
-brew 'gh'
-brew 'wget'
-brew 'imagemagick'
-brew 'jq'
-brew 'openssl'
-brew 'mysql', restart_service: true
-brew 'bat'
-brew 'yarn'
-brew 'nvm'
-brew 'shopify-cli'
-brew 'ruby-install'
-brew 'sqlite'
-brew 'redis', restart_service: true
-brew 'mermaid-cli'
-brew 'watchman'
-brew 'postgresql', restart_service: true
-brew 'pygments'
-brew 'thefuck'
-brew 'jless'
-brew 'ruby-build'
-brew 'rbenv'
-brew 'diff-so-fancy'
-brew 'heroku'
-brew 'tree'
-brew 'pyenv'
-brew 'pyenv-virtualenv'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
-brew 'zsh-autosuggestions'
-brew 'gist'
-brew 'infisical/get-cli/infisical'
+brew "cask"
+brew "zsh"
+brew "romkatv/powerlevel10k/powerlevel10k"
+brew "git"
+brew "gh"
+brew "wget"
+brew "imagemagick"
+brew "jq"
+brew "openssl"
+brew "mysql", restart_service: true
+brew "bat"
+brew "yarn"
+brew "nvm"
+brew "shopify-cli"
+brew "ruby-install"
+brew "sqlite"
+brew "redis", restart_service: true
+brew "mermaid-cli"
+brew "watchman"
+brew "postgresql", restart_service: true
+brew "pygments"
+brew "thefuck"
+brew "jless"
+brew "ruby-build"
+brew "rbenv"
+brew "diff-so-fancy"
+brew "heroku"
+brew "tree"
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+brew "zsh-autosuggestions"
+brew "gist"
+brew "infisical/get-cli/infisical"
 
-cask 'ngrok'
-cask 'nordvpn'
-cask '1password/tap/1password-cli'
-cask 'visual-studio-code'
-cask 'iterm2'
-cask 'google-chrome'
-cask 'firefox-developer-edition'
-cask 'sublime-text'
-cask 'notion'
-cask 'slack'
-cask 'postman'
-cask 'rectangle'
-cask 'sip'
-cask 'spotify'
-cask 'spark'
-cask 'nucleo'
-cask 'spline'
-cask 'zoom'
-cask 'whatsapp'
-cask 'alfred'
-cask 'dash'
-cask 'raycast'
-cask 'numi'
+cask "ngrok"
+cask "nordvpn"
+cask "1password/tap/1password-cli"
+cask "visual-studio-code"
+cask "iterm2"
+cask "google-chrome"
+cask "firefox-developer-edition"
+cask "sublime-text"
+cask "notion"
+cask "slack"
+cask "postman"
+cask "rectangle"
+cask "sip"
+cask "spotify"
+cask "spark"
+cask "nucleo"
+cask "spline"
+cask "zoom"
+cask "whatsapp"
+cask "dash"
+cask "raycast"
+cask "numi"
 
-mas 'shazam', id: 897118787
+mas "shazam", id: 897118787
 
-tap 'shopify/shopify'
+tap "shopify/shopify"
