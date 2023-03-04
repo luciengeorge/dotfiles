@@ -98,9 +98,11 @@
   "workbench.editor.wrapTabs": true,
   "explorer.openEditors.sortOrder": "alphabetical",
   "[ruby]": {
-    "editor.defaultFormatter": "jnbt.vscode-rufo",
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnSave": true,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
+    "editor.formatOnType": true,
+    "editor.semanticHighlighting.enabled": true
   },
   "byesig.fold": false,
   "byesig.enabled": true,
@@ -109,5 +111,10 @@
   "editor.linkedEditing": true,
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
   "editor.stickyScroll.enabled": true,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "[liquid]": {
+
+    // "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": true
+  }
 }
