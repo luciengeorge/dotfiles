@@ -5,7 +5,7 @@ symlink() {
   link=$2
   if [ ! -e "$link" ]; then # link doesn't exist
     echo "-----> Symlinking your new $link"
-    ln -fs $file $link
+    ln -fs "$file" "$link"
   fi
 }
 
@@ -37,9 +37,9 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]; then
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
   echo '-----> Installing powerlevel10k theme'
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 fi
 
 CURRENT_DIR="$(pwd)"
@@ -63,11 +63,11 @@ for name in aliases p10k.zsh zshrc irbrc pryrc rspec; do
   echo "-----> Symlinking $name"
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
-    backup $target
+    backup "$target"
     if [ "$SPIN" ]; then
-      symlink $HOME/dotfiles/$name $target
+      symlink "$HOME/dotfiles/$name" "$target"
     else
-      symlink $PWD/$name $target
+      symlink "$PWD/$name" "$target"
     fi
   fi
 done
@@ -81,11 +81,11 @@ fi
 echo "-----> Importing VSCode settings and keybindings"
 for name in settings.json keybindings.json; do
   target="$CODE_PATH/$name"
-  backup $target
+  backup "$target"
   if [ "$SPIN" ]; then
-    symlink $HOME/dotfiles/$name $target
+    symlink "$HOME/dotfiles/$name" "$target"
   else
-    symlink $PWD/$name $target
+    symlink "$PWD/$name" "$target"
   fi
 done
 
@@ -93,29 +93,29 @@ if test "$(uname)" = "Darwin"; then
   SUBL_PATH=~/Library/Application\ Support/Sublime\ Text
   if [ -d "$SUBL_PATH" ]; then
     echo "-----> Importing Sublime Text settings"
-    mkdir -p $SUBL_PATH/Packages/User $SUBL_PATH/Installed\ Packages
+    mkdir -p "$SUBL_PATH/Packages/User $SUBL_PATH/Installed Packages"
     backup "$SUBL_PATH/Packages/User/Preferences.sublime-settings"
-    curl https://sublime.wbond.net/Package%20Control.sublime-package > $SUBL_PATH/Installed\ Packages/Package\ Control.sublime-package
-    ln -s $PWD/Preferences.sublime-settings $SUBL_PATH/Packages/User/Preferences.sublime-settings
-    ln -s $PWD/Package\ Control.sublime-settings $SUBL_PATH/Packages/User/Package\ Control.sublime-settings
+    curl https://sublime.wbond.net/Package%20Control.sublime-package > "$SUBL_PATH/Installed Packages/Package Control.sublime-package"
+    ln -s "$PWD/Preferences.sublime-settings" "$SUBL_PATH/Packages/User/Preferences.sublime-settings"
+    ln -s "$PWD/Package Control.sublime-settings" "$SUBL_PATH/Packages/User/Package Control.sublime-settings"
   fi
 fi
 
 if test "$(uname)" = "Darwin" && ( command -v spin &> /dev/null; ) || test "$(uname)" = "Linux"; then
   echo "-----> Generating shopify gitconfig"
   target="$HOME/.gitconfig"
-  backup $target
-  symlink $PWD/gitconfig-shopify $target
+  backup "$target"
+  symlink "$PWD/gitconfig-shopify" "$target"
 else
   echo "-----> Generating gitconfig"
   target="$HOME/.gitconfig"
-  backup $target
-  symlink $PWD/gitconfig $target
+  backup "$target"
+  symlink "$PWD/gitconfig $target"
 
   echo "-----> Setting ssh configs"
   target=~/.ssh/config
   backup $target
-  symlink $PWD/config $target
+  symlink "$PWD/config" "$target"
   ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 fi
 
