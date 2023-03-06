@@ -46,4 +46,8 @@ if ( command -v op &> /dev/null; ); then
   eval "$(op completion zsh)"; compdef _op op
 fi
 
+if ( command -v github-copilot-cli &> /dev/null; ); then
+  eval "$(github-copilot-cli alias -- "$0")"
+fi
+
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
