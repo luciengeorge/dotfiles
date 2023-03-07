@@ -17,9 +17,6 @@ if [ "$SPIN" ] || command -v spin &> /dev/null; then
     chruby ruby-3.0.3
   fi
 else
-  unalias rm # No interactive rm by default (brought by plugins/common-aliases)
-  export HOMEBREW_NO_ANALYTICS=1
-  [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
   type -a thefuck > /dev/null && eval $(thefuck --alias)
 
@@ -28,6 +25,10 @@ else
 fi
 
 if [ ! "$SPIN" ]; then
+  unalias rm # No interactive rm by default (brought by plugins/common-aliases)
+  export HOMEBREW_NO_ANALYTICS=1
+  [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
