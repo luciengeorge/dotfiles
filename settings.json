@@ -114,7 +114,8 @@
   "security.workspace.trust.untrustedFiles": "open",
   "[liquid]": {
 
-    // "editor.defaultFormatter": "sissel.shopify-liquid",
-    "editor.formatOnSave": true
-  }
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": false
+  },
+  "git.openRepositoryInParentFolders": "never"
 }
