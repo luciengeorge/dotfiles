@@ -16,9 +16,6 @@ if [ "$SPIN" ] || command -v spin &> /dev/null; then
     export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
     chruby ruby-3.0.3
   fi
-else
-  export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
-  type -a rbenv > /dev/null && eval "$(rbenv init -)"
 fi
 
 if [ ! "$SPIN" ]; then
@@ -33,6 +30,10 @@ if [ ! "$SPIN" ]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
   export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
+  if ( ! command -v spin &> /dev/null; ); then
+    export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
+    type -a rbenv > /dev/null && eval "$(rbenv init -)"
+  fi
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"
