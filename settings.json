@@ -117,5 +117,6 @@
     "editor.defaultFormatter": "sissel.shopify-liquid",
     "editor.formatOnSave": false
   },
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "rubyLsp.enableExperimentalFeatures": true
 }
