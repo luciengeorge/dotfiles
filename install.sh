@@ -78,16 +78,15 @@ else
   CODE_PATH=~/Library/Application\ Support/Code/User
 fi
 
-echo "-----> Importing VSCode settings and keybindings"
-for name in settings.json keybindings.json; do
-  target="$CODE_PATH/$name"
-  backup "$target"
-  if [ "$SPIN" ]; then
-    symlink "$HOME/dotfiles/$name" "$target"
-  else
-    symlink "$PWD/$name" "$target"
-  fi
-done
+echo "-----> Importing VSCode keybindings"
+name="keybindings.json"
+target="$CODE_PATH/$name"
+backup "$target"
+if [ "$SPIN" ]; then
+  symlink "$HOME/dotfiles/$name" "$target"
+else
+  symlink "$PWD/$name" "$target"
+fi
 
 if test "$(uname)" = "Darwin"; then
   SUBL_PATH=~/Library/Application\ Support/Sublime\ Text
