@@ -36,6 +36,7 @@ brew "zsh-syntax-highlighting"
 brew "zsh-autosuggestions"
 brew "gist"
 brew "infisical/get-cli/infisical"
+brew "fzf"
 
 cask "ngrok"
 cask "nordvpn"

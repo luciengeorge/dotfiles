@@ -52,3 +52,4 @@ if ( command -v github-copilot-cli &> /dev/null; ); then
 fi
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
