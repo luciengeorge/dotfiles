@@ -34,8 +34,6 @@ if [ ! "$SPIN" ]; then
     export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
     type -a rbenv > /dev/null && eval "$(rbenv init -)"
   fi
-else
-  export GITSTATUS_LOG_LEVEL=DEBUG
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"
