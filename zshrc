@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 if [ "$SPIN" ] || command -v spin &> /dev/null; then
-  [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
   [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
   if [ ! "$SPIN" ]; then
@@ -34,6 +34,8 @@ if [ ! "$SPIN" ]; then
     export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
     type -a rbenv > /dev/null && eval "$(rbenv init -)"
   fi
+else
+  export GITSTATUS_LOG_LEVEL=DEBUG
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"
