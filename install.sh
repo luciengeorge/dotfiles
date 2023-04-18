@@ -128,7 +128,20 @@ fi
 
 if [ "$SPIN" ]; then
   echo "-----> Installing diff-so-fancy"
-  npm install -g diff-so-fancy
+  CURRENT_DIR="$(pwd)"
+  CHECKOUT_WEB="$HOME/src/github.com/Shopify/checkout-web"
+  SHOPIFY="$HOME/src/github.com/Shopify"
+  if [ -d "$CHECKOUT_WEB" ]; then
+    cd "$CHECKOUT_WEB" || exit
+    npm install -g diff-so-fancy
+  fi
+
+  if [ -d "$SHOPIFY" ]; then
+    cd "$SHOPIFY" || exit
+    npm install -g diff-so-fancy
+  fi
+
+  cd "$CURRENT_DIR" || exit
 fi
 
 if [ ! "$SPIN" ]; then
