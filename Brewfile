@@ -13,7 +13,6 @@ brew "openssl"
 brew "mysql", restart_service: true
 brew "bat"
 brew "yarn"
-brew "nvm"
 brew "shopify-cli"
 brew "ruby-install"
 brew "sqlite"

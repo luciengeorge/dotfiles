@@ -19,6 +19,13 @@ backup() {
   fi
 }
 
+if [ ! "$SPIN" ] && (! command -v nvm &> /dev/null; ); then
+  echo "-----> Installing nvm"
+  rm -rf "$HOME/.nvm"
+  mkdir -p "$HOME/.nvm"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+fi
+
 # if test "$(uname)" = "Darwin" && ! command -v brew &> /dev/null; then
 #   echo "-----> Installing Homebrew"
 #   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
