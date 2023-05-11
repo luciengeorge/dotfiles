@@ -156,7 +156,8 @@ if [ ! "$SPIN" ]; then
   target="$HOME/.fzf.zsh"
   backup "$target"
   symlink "$PWD/fzf.zsh" "$target"
-  exec zsh
 fi
+
+exec zsh
 
 echo "-----> install.sh done ✅"
