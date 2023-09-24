@@ -19,7 +19,7 @@ backup() {
   fi
 }
 
-if [ ! "$SPIN" ] && (! command -v nvm &> /dev/null; ); then
+if (! command -v nvm &> /dev/null; ); then
   echo "-----> Installing nvm"
   rm -rf "$HOME/.nvm"
   mkdir -p "$HOME/.nvm"
@@ -79,21 +79,13 @@ for name in aliases p10k.zsh zshrc irbrc pryrc rspec; do
   fi
 done
 
-if [ "$SPIN" ]; then
-  CODE_PATH=~/.vscode-server/data/Machine
-else
-  CODE_PATH=~/Library/Application\ Support/Code/User
-fi
+CODE_PATH=~/Library/Application\ Support/Code/User
 
 echo "-----> Importing VSCode keybindings"
 name="keybindings.json"
 target="$CODE_PATH/$name"
 backup "$target"
-if [ "$SPIN" ]; then
-  symlink "$HOME/dotfiles/$name" "$target"
-else
-  symlink "$PWD/$name" "$target"
-fi
+symlink "$PWD/$name" "$target"
 
 if test "$(uname)" = "Darwin"; then
   SUBL_PATH=~/Library/Application\ Support/Sublime\ Text
@@ -107,56 +99,21 @@ if test "$(uname)" = "Darwin"; then
   fi
 fi
 
-if test "$(uname)" = "Darwin" && ( command -v spin &> /dev/null; ) || test "$(uname)" = "Linux"; then
-  echo "-----> Generating shopify gitconfig"
-  target="$HOME/.gitconfig"
-  backup "$target"
-  symlink "$PWD/gitconfig-shopify" "$target"
-else
-  echo "-----> Generating gitconfig"
-  target="$HOME/.gitconfig"
-  backup "$target"
-  symlink "$PWD/gitconfig $target"
+echo "-----> Generating gitconfig"
+target="$HOME/.gitconfig"
+backup "$target"
+symlink "$PWD/gitconfig $target"
 
-  echo "-----> Setting ssh configs"
-  target=~/.ssh/config
-  backup $target
-  symlink "$PWD/config" "$target"
-  ssh-add --apple-use-keychain ~/.ssh/id_ed25519
-fi
+echo "-----> Setting ssh configs"
+target=~/.ssh/config
+backup $target
+symlink "$PWD/config" "$target"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
-if [ "$SPIN" ] && ( ! command -v batcat &> /dev/null; ); then
-  echo "-----> Installing bat"
-  sudo apt-get install -y bat
-  mkdir -p ~/.local/bin
-  ln -s /usr/bin/batcat ~/.local/bin/bat
-  alias bat='batcat'
-fi
-
-if [ "$SPIN" ]; then
-  echo "-----> Installing diff-so-fancy"
-  CURRENT_DIR="$(pwd)"
-  CHECKOUT_WEB="$HOME/src/github.com/Shopify/checkout-web"
-  SHOPIFY="$HOME/src/github.com/Shopify"
-  if [ -d "$CHECKOUT_WEB" ]; then
-    cd "$CHECKOUT_WEB" || exit
-    npm install -g diff-so-fancy
-  fi
-
-  if [ -d "$SHOPIFY" ]; then
-    cd "$SHOPIFY" || exit
-    npm install -g diff-so-fancy
-  fi
-
-  cd "$CURRENT_DIR" || exit
-fi
-
-if [ ! "$SPIN" ]; then
-  echo "-----> Installing fzf"
-  target="$HOME/.fzf.zsh"
-  backup "$target"
-  symlink "$PWD/fzf.zsh" "$target"
-fi
+echo "-----> Installing fzf"
+target="$HOME/.fzf.zsh"
+backup "$target"
+symlink "$PWD/fzf.zsh" "$target"
 
 exec zsh
 
