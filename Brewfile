@@ -59,6 +59,7 @@ cask "whatsapp"
 cask "dash"
 cask "raycast"
 cask "numi"
+cask "cron"
 
 mas "shazam", id: 897118787
 
