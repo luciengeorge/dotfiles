@@ -49,7 +49,7 @@ fi
       background_jobs         # presence of background jobs
       virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       # anaconda                # conda environment (https://conda.io/)
-      # pyenv                   # python environment (https://github.com/pyenv/pyenv)
+      pyenv                   # python environment (https://github.com/pyenv/pyenv)
       # nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
       nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
       nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
@@ -453,7 +453,7 @@ fi
   # Pyenv color.
   typeset -g POWERLEVEL9K_PYENV_FOREGROUND=37
   # Don't show the current Python version if it's the same as global.
-  typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW=false
+  typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW=true
   # Custom icon.
   # typeset -g POWERLEVEL9K_PYENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
