@@ -1,19 +1,19 @@
 [
-//   {
-//     "key": "cmd+v",
-//     "command": "pasteAndIndent.action",
-//     "when": "editorTextFocus && !editorReadonly"
-//   },
-//   {
-//     "key": "cmd+v",
-//     "command": "editor.action.clipboardPasteAction",
-//     "when": "!editorTextFocus"
-//   },
-//   {
-//     "key": "cmd+shift+v",
-//     "command": "editor.action.clipboardPasteAction",
-//     "when": "editorTextFocus && !editorReadonly"
-//   },
+  //   {
+  //     "key": "cmd+v",
+  //     "command": "pasteAndIndent.action",
+  //     "when": "editorTextFocus && !editorReadonly"
+  //   },
+  //   {
+  //     "key": "cmd+v",
+  //     "command": "editor.action.clipboardPasteAction",
+  //     "when": "!editorTextFocus"
+  //   },
+  //   {
+  //     "key": "cmd+shift+v",
+  //     "command": "editor.action.clipboardPasteAction",
+  //     "when": "editorTextFocus && !editorReadonly"
+  //   },
   {
     "key": "tab",
     "command": "-editor.emmet.action.expandAbbreviation",
@@ -39,6 +39,22 @@
     "command": "-inlineChat.start",
     "when": "inlineChatHasProvider && !editorReadonly"
   },
+  {
+    "key": "alt+l",
+    "command": "aichat.newchataction"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-aichat.newchataction"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "aichat.insertselectionintochat"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-aichat.insertselectionintochat"
+  }
 ]
 
 // [
