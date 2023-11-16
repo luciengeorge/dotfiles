@@ -3,7 +3,7 @@
 
 brew "cask"
 brew "zsh"
-brew "romkatv/powerlevel10k/powerlevel10k"
+brew "powerlevel10k"
 brew "git"
 brew "gh"
 brew "wget"
@@ -39,7 +39,8 @@ brew "fzf"
 
 cask "ngrok"
 cask "nordvpn"
-cask "1password/tap/1password-cli"
+cask "1password"
+cask "1password-cli"
 cask "visual-studio-code"
 cask "iterm2"
 cask "google-chrome"
@@ -59,7 +60,6 @@ cask "whatsapp"
 cask "dash"
 cask "raycast"
 cask "numi"
-cask "cron"
 
 mas "shazam", id: 897118787
 
