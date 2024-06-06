@@ -1,7 +1,7 @@
 {
   "always_show_minimap_viewport": false,
   "caret_style": "blink",
-  "color_scheme": "Packages/ayu/ayu-dark.sublime-color-scheme",
+  "color_scheme": "ayu-dark.sublime-color-scheme",
   "detect_indentation": false,
   "draw_white_space": true,
   "ensure_newline_at_eof_on_save": true,
@@ -38,5 +38,6 @@
   "update_check": false,
   "use_tab_stops": true,
   "wordWrap": true,
-  "font_size": 12,
+  /*"font_size": 24,*/
+  "index_files": false,
 }
