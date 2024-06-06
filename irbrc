@@ -9,4 +9,4 @@ if defined?(Pry)
   exit
 end
 
-IRB.conf[:USE_AUTOCOMPLETE] = false
+# IRB.conf[:USE_AUTOCOMPLETE] = false
