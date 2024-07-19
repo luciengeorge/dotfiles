@@ -21,6 +21,10 @@
   d = !git --no-pager diff
   dt  = difftool
   stat = !git --no-pager diff --stat
+  undo = reset --soft HEAD^
+  unstage = reset HEAD --
+  revert = reset HEAD^
+  discard = reset --hard HEAD^
 
   # Clean merged branches
   sweep = !git branch --merged main | grep -v 'main$' | xargs git branch -d && git remote prune origin
