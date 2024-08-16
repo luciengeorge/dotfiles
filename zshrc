@@ -35,8 +35,8 @@ if ( command -v op &> /dev/null; ); then
   eval "$(op completion zsh)"; compdef _op op
 fi
 
-if ( command -v github-copilot-cli &> /dev/null; ); then
-  eval "$(github-copilot-cli alias -- "$0")"
+if ( command -v gh &> /dev/null; ); then
+  eval "$(gh copilot alias -- zsh)"
 fi
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -46,4 +46,3 @@ if [ ! "$SPIN" ]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

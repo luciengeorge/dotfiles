@@ -66,7 +66,7 @@ fi
 
 cd "$CURRENT_DIR" || exit
 
-for name in aliases p10k.zsh zshrc irbrc pryrc rspec; do
+for name in aliases p10k.zsh zshrc irbrc pryrc rspec hushlogin; do
   echo "-----> Symlinking $name"
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
