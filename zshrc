@@ -54,7 +54,6 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-export OPENAI_API_KEY="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"
 export PATH="$HOME/.dotnet/tools:$PATH"
 
 # pnpm
