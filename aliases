@@ -159,6 +159,14 @@ alias rdbc="bin/rails db:create"
 # rails db:drop db:create db:migrate db:seed
 alias rdb="bin/rails db:drop db:create db:migrate db:seed"
 
+c() {
+  open "$1" -a "Cursor"
+}
+
+v() {
+  open "$1" -a "Visual Studio Code"
+}
+
 # jupyter notebook
 alias jn="jupyter notebook"
 

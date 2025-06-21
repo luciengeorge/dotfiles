@@ -26,6 +26,10 @@
   "hot_exit": false,
   "ignored_packages":
   [
+    "BracketHighlighter",
+    "Package Control",
+    "SublimeLinter",
+    "SublimeLinter-eslint",
     "Vintage",
   ],
   "remember_open_files": false,
@@ -40,5 +44,5 @@
   "wordWrap": true,
   /*"font_size": 24,*/
   "index_files": false,
-  "font_size": 11,
+  "font_size": 14,
 }

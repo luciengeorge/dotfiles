@@ -38,8 +38,6 @@
 
   m = checkout main
 
-  # Removes a file from the index
-  unstage = reset HEAD --
   recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 
 [help]

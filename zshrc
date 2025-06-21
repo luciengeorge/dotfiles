@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -46,3 +53,14 @@ if [ ! "$SPIN" ]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export OPENAI_API_KEY="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"
+export PATH="$HOME/.dotnet/tools:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/lucien/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
