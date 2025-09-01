@@ -60,7 +60,172 @@ esac
 # pnpm end
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/lucien/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lucien/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/lucien/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lucien/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/lucien/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lucien/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/lucien/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lucien/google-cloud-sdk/completion.zsh.inc'; fi
+
+fyxer_web_app_watch() {
+    # Function to display help
+    show_help() {
+        echo "Usage: fyxer_web_app_watch [SUBDIR] [OPTIONS]"
+        echo
+        echo "Watch and build fyxer web application components"
+        echo
+        echo "Subdirectory Selection (choose one):"
+        echo "  1, functions     Watch and build the functions directory"
+        echo "  2, app          Watch and build the app directory"
+        echo "  3, dataScience  Watch and build the dataScience directory"
+        echo
+        echo "Options:"
+        echo "  --subdir DIR     Explicitly specify the subdirectory"
+        echo "  --watch          Watch the build command after building"
+        echo "  -h, --help       Display this help message"
+        echo "  --run            Run the build command for the app directory"
+        echo "Legacy Format (maintained for backwards compatibility):"
+        echo "  f, 0            Alternative for functions"
+        echo "  a, 1            Alternative for app"
+        echo "  d, 2            Alternative for dataScience"
+        echo
+        echo "Examples:"
+        echo "  fyxer_web_app_watch functions"
+        echo "  fyxer_web_app_watch 2 --watch"
+        echo "  fyxer_web_app_watch --subdir app --watch"
+        echo "  fyxer_web_app_watch --subdir app --run"
+        return 0
+    }
+
+    # Default subdirectory
+    local subdir=""
+    local original_dir="$(pwd)"
+    local no_watch=false
+    local no_build=false
+
+    # Show help if no arguments
+    if [ $# -eq 0 ]; then
+        show_help
+        return 0
+    fi
+
+    # Function to handle cleanup on exit
+    cleanup() {
+        echo -e "\nCleaning up..."
+        cd "$original_dir"
+        # exit 0
+    }
+
+    # Set up trap for Ctrl+C
+    trap cleanup SIGINT SIGTERM
+
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -h|--help)
+                show_help
+                return 0
+                ;;
+            --subdir)
+                subdir="$2"
+                shift 2
+                ;;
+            --watch)
+                watch=true
+                shift
+                ;;
+            --run)
+                run=true
+                shift
+                ;;
+            "1"|"functions")
+                subdir="functions"
+                shift
+                ;;
+            "2"|"app")
+                subdir="app"
+                shift
+                ;;
+            "3"|"dataScience")
+                subdir="dataScience"
+                shift
+                ;;
+            *)
+                # Handle legacy format and direct argument without --subdir flag
+                case "${1,,}" in  # Convert to lowercase for comparison
+                    "d"|"datascience"|"2") subdir="dataScience" ;;
+                    "f"|"functions"|"0") subdir="functions" ;;
+                    "a"|"app"|"1") subdir="app" ;;
+                    *)
+                        subdir="$1"
+                        ;;
+                esac
+                shift
+                ;;
+        esac
+    done
+
+    # If no subdir provided or if it's invalid, show interactive selection
+    if [ -z "$subdir" ] || [[ ! "$subdir" =~ ^(functions|app|dataScience)$ ]]; then
+        echo "Select a subdirectory to watch:"
+        echo "1 or functions     -> functions"
+        echo "2 or app          -> app"
+        echo "3 or dataScience  -> dataScience"
+        select subdir in "functions" "app" "dataScience"; do
+            case $REPLY in
+                1|2|3)
+                    break
+                    ;;
+                *)
+                    echo "Invalid selection. Please try again."
+                    ;;
+            esac
+        done
+    fi
+
+    # Validate subdirectory
+    if [[ ! "$subdir" =~ ^(functions|app|dataScience)$ ]]; then
+        echo "Error: subdirectory must be one of: functions, app, dataScience"
+        echo "You can use: numbers (1,2,3), letters (f,a,d), or full names"
+        return 1
+    fi
+
+    # check if cwd directory is web-app
+    if [ "$(basename "$(pwd)")" != "web-app" ]; then
+        echo "Error: Current directory is not web-app"
+        echo "Changing directory to web-app"
+        cd ~/FyxerGH/fyxer-web-app
+    fi
+
+    # check if web-app is in the pwd path, if it is, cd .. back to the parent directory until it is web-app
+    if [[ "$(basename "$(pwd)")" == *"web-app"* ]]; then
+        while [[ "$(basename "$(pwd)")" != *"web-app"* ]]; do
+            cd ..
+        done
+    fi
+
+    # run the watch command
+    cd ./shared && npm i && npm run distribute #&& cd ../functions && npm i && npm run build && npm run build:watch
+    echo "Distributed the shared package"
+    echo "cd into $subdir and build to reference the distributed shared package"
+
+    if [ "$subdir" = "dataScience" ]; then
+        cd "../$subdir" && npm i && npm run postinstall
+    elif [ "$subdir" = "app" ]; then
+        if [ "$run" = true ]; then
+            cd "../$subdir" && npm i && npm run dev
+        else
+            cd "../$subdir" && npm i
+        fi
+    else
+        cd "../$subdir" && npm i
+        if [ "$watch" = true ]; then
+            npm run build:watch
+        else
+            npm run build
+        fi
+    fi
+}
+
+# if current pwd is web-app, run fyxer_web_app_watch
+if [ "$(basename "$(pwd)")" = "web-app" ]; then
+    echo "Run command: fyxer_web_app_watch --subdir <functions|app|dataScience> to watch the web-app directory"
+fi
