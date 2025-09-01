@@ -3,8 +3,6 @@
 
 tap "1password/tap"
 tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "infisical/get-cli"
 tap "romkatv/powerlevel10k"
 tap "shopify/shopify"
@@ -49,7 +47,6 @@ brew "mermaid-cli"
 brew "mysql", restart_service: true
 brew "open-mpi"
 brew "openssl"
-brew "openssl@1.1"
 brew "openssl@3"
 brew "openslide"
 brew "p11-kit"
@@ -69,7 +66,6 @@ brew "ruby-build"
 brew "ruby-install"
 brew "rust"
 brew "shared-mime-info"
-brew "shopify-cli"
 brew "sqlite"
 brew "thefuck"
 brew "tree"
@@ -86,27 +82,20 @@ brew "zsh-syntax-highlighting"
 
 cask "1password"
 cask "1password-cli"
-cask "alfred"
-cask "dash"
 cask "figma"
-cask "firefox-developer-edition"
+cask "firefox@developer-edition"
 cask "google-chrome"
-cask "iterm2"
 cask "ngrok"
 cask "nordvpn"
 cask "notion"
-cask "notion-calendar"
 cask "numi"
 cask "nucleo"
 cask "postman"
 cask "raycast"
 cask "rectangle"
-cask "sip"
-cask "spline"
 cask "spotify"
 cask "sublime-text"
 cask "visual-studio-code"
-cask "warp"
 cask "whatsapp"
 cask "zoom"
 
@@ -114,11 +103,9 @@ mas "Developer", id: 640199958
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
-mas "NordVPN", id: 905953485
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Shazam", id: 897118787
-mas "WhatsApp", id: 1147396723
 
 vscode "aaron-bond.better-comments"
 vscode "aki77.rails-db-schema"
