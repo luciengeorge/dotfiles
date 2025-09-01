@@ -42,15 +42,8 @@ if ( command -v op &> /dev/null; ); then
   eval "$(op completion zsh)"; compdef _op op
 fi
 
-if ( command -v gh &> /dev/null; ); then
-  eval "$(gh copilot alias -- zsh)"
-fi
-
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-if [ ! "$SPIN" ]; then
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-fi
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
