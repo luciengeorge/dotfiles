@@ -65,10 +65,10 @@ if [ -f '/Users/lucien/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lucien/g
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lucien/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lucien/google-cloud-sdk/completion.zsh.inc'; fi
 
-fyxer_web_app_watch() {
+setup_web_app() {
     # Function to display help
     show_help() {
-        echo "Usage: fyxer_web_app_watch [SUBDIR] [OPTIONS]"
+        echo "Usage: setup_web_app [SUBDIR] [OPTIONS]"
         echo
         echo "Watch and build fyxer web application components"
         echo
@@ -88,10 +88,10 @@ fyxer_web_app_watch() {
         echo "  d, 2            Alternative for dataScience"
         echo
         echo "Examples:"
-        echo "  fyxer_web_app_watch functions"
-        echo "  fyxer_web_app_watch 2 --watch"
-        echo "  fyxer_web_app_watch --subdir app --watch"
-        echo "  fyxer_web_app_watch --subdir app --run"
+        echo "  setup_web_app functions"
+        echo "  setup_web_app 2 --watch"
+        echo "  setup_web_app --subdir app --watch"
+        echo "  setup_web_app --subdir app --run"
         return 0
     }
 
@@ -192,7 +192,7 @@ fyxer_web_app_watch() {
     if [ "$(basename "$(pwd)")" != "web-app" ]; then
         echo "Error: Current directory is not web-app"
         echo "Changing directory to web-app"
-        cd ~/FyxerGH/fyxer-web-app
+        cd ~/src/fyxerai/web-app
     fi
 
     # check if web-app is in the pwd path, if it is, cd .. back to the parent directory until it is web-app
@@ -225,7 +225,13 @@ fyxer_web_app_watch() {
     fi
 }
 
-# if current pwd is web-app, run fyxer_web_app_watch
+# if current pwd is web-app, run setup_web_app
 if [ "$(basename "$(pwd)")" = "web-app" ]; then
-    echo "Run command: fyxer_web_app_watch --subdir <functions|app|dataScience> to watch the web-app directory"
+    echo "Run command: setup_web_app --subdir <functions|app|dataScience> to watch the web-app directory"
 fi
+export PATH="$HOME/.local/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/lucien/.lmstudio/bin"
+# End of LM Studio CLI section
+

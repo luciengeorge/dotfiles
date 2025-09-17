@@ -280,7 +280,7 @@ fi
   # If local branch name is at most 32 characters long, show it in full.
   vcs+='${${${$(($#VCS_STATUS_LOCAL_BRANCH<=32)):#0}:+${VCS_STATUS_LOCAL_BRANCH//\%/%%}}'
   # If local branch name is over 32 characters long, show the first 12 … the last 12.
-  vcs+=':-${VCS_STATUS_LOCAL_BRANCH[1,12]//\%/%%}%48F…%48F${VCS_STATUS_LOCAL_BRANCH[-12,-1]//\%/%%}}}'
+  vcs+=':-${VCS_STATUS_LOCAL_BRANCH[1,12]//\%/%%}%30F…%30F${VCS_STATUS_LOCAL_BRANCH[-12,-1]//\%/%%}}}'
   # '@72f5c8a' if not on a branch.
   vcs+=':-%f@%76F${VCS_STATUS_COMMIT[1,8]}}'
   # ':master' if the tracking branch name differs from local branch.
