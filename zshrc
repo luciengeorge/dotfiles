@@ -226,11 +226,11 @@ setup_web_app() {
 }
 
 setup_all() {
-  PWD=$(pwd)
+  CURRENT_DIR=$(pwd)
   setup_web_app --subdir functions
   setup_web_app --subdir app
   setup_web_app --subdir dataScience
-  cd $PWD
+  cd $CURRENT_DIR
 }
 
 # if current pwd is web-app, run setup_web_app
