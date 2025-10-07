@@ -225,6 +225,14 @@ setup_web_app() {
     fi
 }
 
+setup_all() {
+  PWD=$(pwd)
+  setup_web_app --subdir functions
+  setup_web_app --subdir app
+  setup_web_app --subdir dataScience
+  cd $PWD
+}
+
 # if current pwd is web-app, run setup_web_app
 if [ "$(basename "$(pwd)")" = "web-app" ]; then
     echo "Run command: setup_web_app --subdir <functions|app|dataScience> to watch the web-app directory"
@@ -234,4 +242,3 @@ export PATH="$HOME/.local/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/lucien/.lmstudio/bin"
 # End of LM Studio CLI section
-
