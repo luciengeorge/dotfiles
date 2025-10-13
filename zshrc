@@ -14,6 +14,15 @@ source $ZSH/oh-my-zsh.sh
 
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=220'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=220'
+ZSH_HIGHLIGHT_STYLES[command]='fg=85'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=85'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=85'
+ZSH_HIGHLIGHT_STYLES[function]='fg=85'
+ZSH_HIGHLIGHT_STYLES[command]='fg=85'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=85'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=85'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=85'
 
 # Store your own aliases in the ~/.aliases file and load it
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
