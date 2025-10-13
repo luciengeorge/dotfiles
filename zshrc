@@ -12,6 +12,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(gitfast git last-working-dir common-aliases sublime zsh-syntax-highlighting zsh-autosuggestions history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=220'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=220'
+
 # Store your own aliases in the ~/.aliases file and load it
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
