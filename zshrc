@@ -30,7 +30,7 @@ ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=85'
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 export HOMEBREW_NO_ANALYTICS=1
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 type -a thefuck > /dev/null && eval $(thefuck --alias)
 
 export NVM_DIR="$HOME/.nvm"
