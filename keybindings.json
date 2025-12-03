@@ -103,6 +103,10 @@
   {
     "key": "cmd+i",
     "command": "-composer.startComposerPrompt"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-composer.newAgentChat"
   }
 ]
 

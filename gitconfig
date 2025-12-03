@@ -26,8 +26,8 @@
   revert = reset HEAD^
   discard = reset --hard HEAD^
 
-  # Clean merged branches
-  sweep = !git branch --merged main | grep -v 'main$' | xargs git branch -d && git remote prune origin
+  # Clean merged branches (regular + squash-merged via GitHub PRs)
+  sweep = "!git branch --merged main | grep -v 'main$' | xargs -r git branch -d 2>/dev/null; gh pr list --state merged --json headRefName -q '.[].headRefName' | xargs -I {} git branch -D {} 2>/dev/null; git remote prune origin"
 
   # http://www.jukie.net/bart/blog/pimping-out-git-log
   lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
@@ -39,6 +39,9 @@
   m = checkout main
 
   recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+	patch = "!f() { git add . && git commit -m \"$1\" && npm version patch && git push && git push --tags; }; f"
+	minor = "!f() { git add . && git commit -m \"$1\" && npm version minor && git push && git push --tags; }; f"
+	major = "!f() { git add . && git commit -m \"$1\" && npm version major && git push && git push --tags; }; f"
 
 [help]
   autocorrect = 20
