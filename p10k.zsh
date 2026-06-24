@@ -333,7 +333,7 @@ fi
   typeset -g POWERLEVEL9K_VCS_LOADING_FOREGROUND=244
   # These settings are used for respositories other than Git or when gitstatusd fails and
   # Powerlevel10k has to fall back to using vcs_info.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=46
+  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=28
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=1
   typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=3
 

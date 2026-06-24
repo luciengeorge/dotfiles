@@ -1,12 +1,11 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Powerlevel10k instant prompt disabled — using Warp's built-in prompt.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Use Warp's built-in prompt instead of a zsh theme.
+ZSH_THEME=""
 
 
 plugins=(gitfast git last-working-dir common-aliases sublime zsh-syntax-highlighting zsh-autosuggestions history-substring-search)
@@ -14,15 +13,15 @@ source $ZSH/oh-my-zsh.sh
 
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=220'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=220'
-ZSH_HIGHLIGHT_STYLES[command]='fg=85'
+ZSH_HIGHLIGHT_STYLES[command]='fg=#00a63e'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=85'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=85'
-ZSH_HIGHLIGHT_STYLES[function]='fg=85'
-ZSH_HIGHLIGHT_STYLES[command]='fg=85'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=85'
-ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=85'
-ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=85'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#00a63e'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#00a63e'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#00a63e'
+ZSH_HIGHLIGHT_STYLES[command]='fg=#00a63e'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=#00a63e'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=#00a63e'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=#00a63e'
 
 # Store your own aliases in the ~/.aliases file and load it
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -54,8 +53,8 @@ if ( command -v op &> /dev/null; ); then
   eval "$(op completion zsh)"; compdef _op op
 fi
 
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -66,8 +65,8 @@ export PATH="$HOME/.dotnet/tools:$PATH"
 # pnpm
 export PNPM_HOME="/Users/lucien/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
 
@@ -77,180 +76,193 @@ if [ -f '/Users/lucien/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lucien/g
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lucien/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lucien/google-cloud-sdk/completion.zsh.inc'; fi
 
-setup_web_app() {
-    # Function to display help
-    show_help() {
-        echo "Usage: setup_web_app [SUBDIR] [OPTIONS]"
-        echo
-        echo "Watch and build fyxer web application components"
-        echo
-        echo "Subdirectory Selection (choose one):"
-        echo "  1, functions     Watch and build the functions directory"
-        echo "  2, app          Watch and build the app directory"
-        echo "  3, dataScience  Watch and build the dataScience directory"
-        echo
-        echo "Options:"
-        echo "  --subdir DIR     Explicitly specify the subdirectory"
-        echo "  --watch          Watch the build command after building"
-        echo "  -h, --help       Display this help message"
-        echo "  --run            Run the build command for the app directory"
-        echo "Legacy Format (maintained for backwards compatibility):"
-        echo "  f, 0            Alternative for functions"
-        echo "  a, 1            Alternative for app"
-        echo "  d, 2            Alternative for dataScience"
-        echo
-        echo "Examples:"
-        echo "  setup_web_app functions"
-        echo "  setup_web_app 2 --watch"
-        echo "  setup_web_app --subdir app --watch"
-        echo "  setup_web_app --subdir app --run"
-        return 0
-    }
+# setup_web_app() {
+#     # Function to display help
+#     show_help() {
+#         echo "Usage: setup_web_app [SUBDIR] [OPTIONS]"
+#         echo
+#         echo "Watch and build fyxer web application components"
+#         echo
+#         echo "Subdirectory Selection (choose one):"
+#         echo "  1, functions     Watch and build the functions directory"
+#         echo "  2, app          Watch and build the app directory"
+#         echo "  3, dataScience  Watch and build the dataScience directory"
+#         echo
+#         echo "Options:"
+#         echo "  --subdir DIR     Explicitly specify the subdirectory"
+#         echo "  --watch          Watch the build command after building"
+#         echo "  -h, --help       Display this help message"
+#         echo "  --run            Run the build command for the app directory"
+#         echo "Legacy Format (maintained for backwards compatibility):"
+#         echo "  f, 0            Alternative for functions"
+#         echo "  a, 1            Alternative for app"
+#         echo "  d, 2            Alternative for dataScience"
+#         echo
+#         echo "Examples:"
+#         echo "  setup_web_app functions"
+#         echo "  setup_web_app 2 --watch"
+#         echo "  setup_web_app --subdir app --watch"
+#         echo "  setup_web_app --subdir app --run"
+#         return 0
+#     }
 
-    # Default subdirectory
-    local subdir=""
-    local original_dir="$(pwd)"
-    local no_watch=false
-    local no_build=false
+#     # Default subdirectory
+#     local subdir=""
+#     local original_dir="$(pwd)"
+#     local no_watch=false
+#     local no_build=false
 
-    # Show help if no arguments
-    if [ $# -eq 0 ]; then
-        show_help
-        return 0
-    fi
+#     # Show help if no arguments
+#     if [ $# -eq 0 ]; then
+#         show_help
+#         return 0
+#     fi
 
-    # Function to handle cleanup on exit
-    cleanup() {
-        echo -e "\nCleaning up..."
-        cd "$original_dir"
-        # exit 0
-    }
+#     # Function to handle cleanup on exit
+#     cleanup() {
+#         echo -e "\nCleaning up..."
+#         cd "$original_dir"
+#         # exit 0
+#     }
 
-    # Set up trap for Ctrl+C
-    trap cleanup SIGINT SIGTERM
+#     # Set up trap for Ctrl+C
+#     trap cleanup SIGINT SIGTERM
 
-    # Parse arguments
-    while [[ $# -gt 0 ]]; do
-        case $1 in
-            -h|--help)
-                show_help
-                return 0
-                ;;
-            --subdir)
-                subdir="$2"
-                shift 2
-                ;;
-            --watch)
-                watch=true
-                shift
-                ;;
-            --run)
-                run=true
-                shift
-                ;;
-            "1"|"functions")
-                subdir="functions"
-                shift
-                ;;
-            "2"|"app")
-                subdir="app"
-                shift
-                ;;
-            "3"|"dataScience")
-                subdir="dataScience"
-                shift
-                ;;
-            *)
-                # Handle legacy format and direct argument without --subdir flag
-                case "${1,,}" in  # Convert to lowercase for comparison
-                    "d"|"datascience"|"2") subdir="dataScience" ;;
-                    "f"|"functions"|"0") subdir="functions" ;;
-                    "a"|"app"|"1") subdir="app" ;;
-                    *)
-                        subdir="$1"
-                        ;;
-                esac
-                shift
-                ;;
-        esac
-    done
+#     # Parse arguments
+#     while [[ $# -gt 0 ]]; do
+#         case $1 in
+#             -h|--help)
+#                 show_help
+#                 return 0
+#                 ;;
+#             --subdir)
+#                 subdir="$2"
+#                 shift 2
+#                 ;;
+#             --watch)
+#                 watch=true
+#                 shift
+#                 ;;
+#             --run)
+#                 run=true
+#                 shift
+#                 ;;
+#             "1"|"functions")
+#                 subdir="functions"
+#                 shift
+#                 ;;
+#             "2"|"app")
+#                 subdir="app"
+#                 shift
+#                 ;;
+#             "3"|"dataScience")
+#                 subdir="dataScience"
+#                 shift
+#                 ;;
+#             *)
+#                 # Handle legacy format and direct argument without --subdir flag
+#                 case "${1,,}" in  # Convert to lowercase for comparison
+#                     "d"|"datascience"|"2") subdir="dataScience" ;;
+#                     "f"|"functions"|"0") subdir="functions" ;;
+#                     "a"|"app"|"1") subdir="app" ;;
+#                     *)
+#                         subdir="$1"
+#                         ;;
+#                 esac
+#                 shift
+#                 ;;
+#         esac
+#     done
 
-    # If no subdir provided or if it's invalid, show interactive selection
-    if [ -z "$subdir" ] || [[ ! "$subdir" =~ ^(functions|app|dataScience)$ ]]; then
-        echo "Select a subdirectory to watch:"
-        echo "1 or functions     -> functions"
-        echo "2 or app          -> app"
-        echo "3 or dataScience  -> dataScience"
-        select subdir in "functions" "app" "dataScience"; do
-            case $REPLY in
-                1|2|3)
-                    break
-                    ;;
-                *)
-                    echo "Invalid selection. Please try again."
-                    ;;
-            esac
-        done
-    fi
+#     # If no subdir provided or if it's invalid, show interactive selection
+#     if [ -z "$subdir" ] || [[ ! "$subdir" =~ ^(functions|app|dataScience)$ ]]; then
+#         echo "Select a subdirectory to watch:"
+#         echo "1 or functions     -> functions"
+#         echo "2 or app          -> app"
+#         echo "3 or dataScience  -> dataScience"
+#         select subdir in "functions" "app" "dataScience"; do
+#             case $REPLY in
+#                 1|2|3)
+#                     break
+#                     ;;
+#                 *)
+#                     echo "Invalid selection. Please try again."
+#                     ;;
+#             esac
+#         done
+#     fi
 
-    # Validate subdirectory
-    if [[ ! "$subdir" =~ ^(functions|app|dataScience)$ ]]; then
-        echo "Error: subdirectory must be one of: functions, app, dataScience"
-        echo "You can use: numbers (1,2,3), letters (f,a,d), or full names"
-        return 1
-    fi
+#     # Validate subdirectory
+#     if [[ ! "$subdir" =~ ^(functions|app|dataScience)$ ]]; then
+#         echo "Error: subdirectory must be one of: functions, app, dataScience"
+#         echo "You can use: numbers (1,2,3), letters (f,a,d), or full names"
+#         return 1
+#     fi
 
-    # check if cwd directory is web-app
-    if [ "$(basename "$(pwd)")" != "web-app" ]; then
-        echo "Error: Current directory is not web-app"
-        echo "Changing directory to web-app"
-        cd ~/src/fyxerai/web-app
-    fi
+#     # check if cwd directory is web-app
+#     if [ "$(basename "$(pwd)")" != "web-app" ]; then
+#         echo "Error: Current directory is not web-app"
+#         echo "Changing directory to web-app"
+#         cd ~/src/fyxerai/web-app
+#     fi
 
-    # check if web-app is in the pwd path, if it is, cd .. back to the parent directory until it is web-app
-    if [[ "$(basename "$(pwd)")" == *"web-app"* ]]; then
-        while [[ "$(basename "$(pwd)")" != *"web-app"* ]]; do
-            cd ..
-        done
-    fi
+#     # check if web-app is in the pwd path, if it is, cd .. back to the parent directory until it is web-app
+#     if [[ "$(basename "$(pwd)")" == *"web-app"* ]]; then
+#         while [[ "$(basename "$(pwd)")" != *"web-app"* ]]; do
+#             cd ..
+#         done
+#     fi
 
-    # run the watch command
-    cd ./shared && npm i && npm run distribute #&& cd ../functions && npm i && npm run build && npm run build:watch
-    echo "Distributed the shared package"
-    echo "cd into $subdir and build to reference the distributed shared package"
+#     # run the watch command
+#     cd ./shared && npm i && npm run distribute #&& cd ../functions && npm i && npm run build && npm run build:watch
+#     echo "Distributed the shared package"
+#     echo "cd into $subdir and build to reference the distributed shared package"
 
-    if [ "$subdir" = "dataScience" ]; then
-        cd "../$subdir" && npm i && npm run postinstall
-    elif [ "$subdir" = "app" ]; then
-        if [ "$run" = true ]; then
-            cd "../$subdir" && npm i && npm run dev
-        else
-            cd "../$subdir" && npm i
-        fi
-    else
-        cd "../$subdir" && npm i
-        if [ "$watch" = true ]; then
-            npm run build:watch
-        else
-            npm run build
-        fi
-    fi
-}
+#     if [ "$subdir" = "dataScience" ]; then
+#         cd "../$subdir" && npm i && npm run postinstall
+#     elif [ "$subdir" = "app" ]; then
+#         if [ "$run" = true ]; then
+#             cd "../$subdir" && npm i && npm run dev
+#         else
+#             cd "../$subdir" && npm i
+#         fi
+#     else
+#         cd "../$subdir" && npm i
+#         if [ "$watch" = true ]; then
+#             npm run build:watch
+#         else
+#             npm run build
+#         fi
+#     fi
+# }
 
-setup_all() {
-  CURRENT_DIR=$(pwd)
-  setup_web_app --subdir functions
-  setup_web_app --subdir app
-  setup_web_app --subdir dataScience
-  cd $CURRENT_DIR
-}
+# setup_all() {
+#   CURRENT_DIR=$(pwd)
+#   setup_web_app --subdir functions
+#   setup_web_app --subdir app
+#   setup_web_app --subdir dataScience
+#   cd $CURRENT_DIR
+# }
 
 # if current pwd is web-app, run setup_web_app
-if [ "$(basename "$(pwd)")" = "web-app" ]; then
-    echo "Run command: setup_web_app --subdir <functions|app|dataScience> to watch the web-app directory"
-fi
+# if [ "$(basename "$(pwd)")" = "web-app" ]; then
+#     echo "Run command: setup_web_app --subdir <functions|app|dataScience> to watch the web-app directory"
+# fi
 export PATH="$HOME/.local/bin:$PATH"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/lucien/.lmstudio/bin"
 # End of LM Studio CLI section
+
+# bun completions
+[ -s "/Users/lucien/.bun/_bun" ] && source "/Users/lucien/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
