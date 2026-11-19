@@ -3,6 +3,7 @@
 {{- $lock := joinPath .chezmoi.workingTree "skills/skill-lock.json" }}
 # lock {{ include $lock | sha256sum }}
 set -uo pipefail
+printf '\n\033[1;34m==> %s\033[0m\n' "Agent skills"
 [[ -r $HOME/.vite-plus/env ]] && . "$HOME/.vite-plus/env"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 jq -r '.skills | to_entries | group_by(.value.source)[] | [.[0].value.source, (map(.key) | join(" "))] | @tsv' {{ $lock | quote }} |

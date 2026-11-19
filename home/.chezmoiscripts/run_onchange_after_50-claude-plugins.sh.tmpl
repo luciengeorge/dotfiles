@@ -1,6 +1,7 @@
 #!/bin/bash
 # settings {{ include "dot_claude/private_settings.json" | sha256sum }}
 set -uo pipefail
+printf '\n\033[1;34m==> %s\033[0m\n' "Claude plugins"
 export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
 command -v claude >/dev/null || { echo "claude not installed, skipping plugins" >&2; exit 0; }
 settings=$HOME/.claude/settings.json

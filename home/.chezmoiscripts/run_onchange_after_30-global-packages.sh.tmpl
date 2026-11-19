@@ -6,6 +6,7 @@
 # bun {{ include (joinPath $pkgs "bun.txt") | sha256sum }}
 # uv {{ include (joinPath $pkgs "uv.txt") | sha256sum }}
 set -uo pipefail
+printf '\n\033[1;34m==> %s\033[0m\n' "Global npm / pnpm / bun / uv packages"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 [[ -r $HOME/.vite-plus/env ]] && . "$HOME/.vite-plus/env"
 export PNPM_HOME=$HOME/Library/pnpm BUN_INSTALL=$HOME/.bun
