@@ -4,6 +4,7 @@
 # fi
 
 export ZSH="$HOME/.oh-my-zsh"
+export JEV_API_KEY="apikey_2132acf5b850b0b64755a7726f0b654d9db8_3a022f90f5f92996c994be2e9c8af57b940ec82977262757421e974bb8fa7191"
 # Use Warp's built-in prompt instead of a zsh theme.
 ZSH_THEME=""
 
@@ -65,8 +66,8 @@ export PATH="$HOME/.dotnet/tools:$PATH"
 # pnpm
 export PNPM_HOME="/Users/lucien/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
 
@@ -266,3 +267,13 @@ export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
 autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
+
+# Entire CLI shell completion
+autoload -Uz compinit && compinit && source <(entire completion zsh)
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Reason CLI
+export PATH="/Users/lucien/.local/bin:$PATH"
