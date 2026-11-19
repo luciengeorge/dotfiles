@@ -1,0 +1,149 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "catppuccin-latte",
+  "plugin": ["@warp-dot-dev/opencode-warp@0.1.5"],
+  "permission": {
+    "external_directory": {
+      "~/src/**": "allow",
+      "~/Library/Application Support/CleanShot/**": "allow",
+      "~/Library/Desktop/**": "allow",
+      "~/Library/Downloads/**": "allow",
+      "~/Library/Downloads/*": "allow",
+      "~/Library/Desktop/*": "allow"
+    },
+    "webfetch": "allow",
+    "websearch": "allow",
+    "codesearch": "allow"
+  },
+  "mcp": {
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "convex": {
+      "type": "local",
+      "command": [
+        "npx",
+        "convex",
+        "mcp",
+        "start",
+        "--cautiously-allow-production-pii"
+      ]
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "growthbook": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@growthbook/mcp@latest"
+      ],
+      "environment": {
+        "GB_API_KEY": "{{ includeTemplate "op" (dict "ctx" . "field" "GB_API_KEY") }}",
+        "GB_EMAIL": "{{ .workEmail }}"
+      }
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{{ includeTemplate "op" (dict "ctx" . "field" "CONTEXT7_API_KEY") }}"
+      }
+    },
+    "posthog": {
+      "type": "remote",
+      "url": "https://mcp.posthog.com/mcp"
+    },
+    "sentry": {
+      "type": "remote",
+      "url": "https://mcp.sentry.dev/mcp"
+    },
+    "uidotsh": {
+      "type": "remote",
+      "url": "https://ui.sh/mcp?agent=opencode",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer {{ includeTemplate "op" (dict "ctx" . "field" "UIDOTSH_TOKEN") }}"
+      }
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ]
+    },
+    "playwright-electron": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest",
+        "--cdp-endpoint",
+        "http://127.0.0.1:9223"
+      ],
+      "enabled": true
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "chrome-devtools-mcp@latest"
+      ]
+    },
+    "vercel": {
+      "type": "remote",
+      "url": "https://mcp.vercel.com"
+    },
+    "fyxer": {
+      "type": "remote",
+      "url": "https://app.fyxer.com/mcp",
+      "oauth": {}
+    },
+    "recall": {
+      "type": "remote",
+      "url": "https://eu-central-1.recall.ai/mcp"
+    },
+    "paper": {
+      "type": "remote",
+      "url": "http://127.0.0.1:29979/mcp",
+      "enabled": true
+    },
+    "resend": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "resend-mcp"
+      ],
+      "environment": {
+        "RESEND_API_KEY": "{{ includeTemplate "op" (dict "ctx" . "field" "RESEND_API_KEY") }}"
+      }
+    },
+    "polar-sandbox": {
+      "type": "remote",
+      "url": "https://mcp.polar.sh/mcp/polar-sandbox"
+    },
+    "polar": {
+      "type": "remote",
+      "url": "https://mcp.polar.sh/mcp/polar-mcp"
+    },
+    "executor": {
+      "type": "remote",
+      "url": "https://executor.sh/lucien-s-organization/mcp",
+      "enabled": true
+    },
+    "motion": {
+      "type": "remote",
+      "url": "https://mcp.motion.dev",
+      "enabled": true
+    },
+    "motion-plus": {
+      "type": "remote",
+      "url": "https://mcp.motion.dev/plus",
+      "enabled": true
+    }
+  }
+}

@@ -1,0 +1,118 @@
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
+personality = "pragmatic"
+service_tier = "priority"
+
+[features]
+unified_exec = true
+shell_snapshot = true
+apps = true
+steer = true
+personality = true
+js_repl = false
+prevent_idle_sleep = true
+
+[shell_environment_policy]
+inherit = "core"
+
+[shell_environment_policy.set]
+CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS = "1"
+OMC_STATE_DIR = "{{ .chezmoi.homeDir }}/.claude/omc-state"
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp", "--api-key", "{{ includeTemplate "op" (dict "ctx" . "field" "CONTEXT7_API_KEY") }}"]
+
+[mcp_servers.notion]
+url = "https://mcp.notion.com/mcp"
+
+[mcp_servers.posthog]
+command = "npx"
+args = ["-y", "mcp-remote@latest", "https://mcp.posthog.com/sse", "--header", "Authorization:Bearer {{ includeTemplate "op" (dict "ctx" . "field" "POSTHOG_API_KEY") }}"]
+
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
+
+[mcp_servers.sentry]
+url = "https://mcp.sentry.dev/mcp"
+
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+
+[mcp_servers.uidotsh]
+url = "https://ui.sh/mcp?agent=codex"
+
+[mcp_servers.uidotsh.http_headers]
+Authorization = "Bearer {{ includeTemplate "op" (dict "ctx" . "field" "UIDOTSH_TOKEN") }}"
+
+[mcp_servers.executor]
+type = "http"
+url = "https://executor.sh/lucien-s-organization/mcp"
+
+[mcp_servers.Neon]
+url = "https://mcp.neon.tech/mcp"
+
+[mcp_servers.Sentry]
+url = "https://mcp.sentry.dev/mcp"
+
+[mcp_servers.cloudflare]
+url = "https://mcp.cloudflare.com/mcp"
+
+[mcp_servers.convex]
+command = "npx"
+args = ["convex", "mcp", "start"]
+
+[mcp_servers.filesystem]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-filesystem", "{{ .chezmoi.homeDir }}"]
+
+[mcp_servers.fyxer]
+url = "https://app.fyxer.com/mcp"
+
+[mcp_servers.fyxer-vault]
+command = "{{ .chezmoi.homeDir }}/src/fyxerai/fyxer-vault/mcp/node_modules/.bin/tsx"
+args = ["{{ .chezmoi.homeDir }}/src/fyxerai/fyxer-vault/mcp/src/index.ts"]
+
+[mcp_servers.fyxer-vault.env]
+VAULT_URL = "http://localhost:3001"
+
+[mcp_servers.paper]
+url = "http://127.0.0.1:29979/mcp"
+
+[mcp_servers.recall]
+url = "https://eu-central-1.recall.ai/mcp"
+
+[mcp_servers.resend]
+url = "https://resend.com/docs/mcp"
+
+[mcp_servers.v0]
+command = "npx"
+args = ["mcp-remote", "https://mcp.v0.dev", "--header", "Authorization: Bearer {{ includeTemplate "op" (dict "ctx" . "field" "V0_API_KEY") }}"]
+
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp"
+
+[mcp_servers.github.http_headers]
+Authorization = "Bearer {{ includeTemplate "op" (dict "ctx" . "field" "GITHUB_PAT") }}"
+
+[mcp_servers.observability]
+command = "npx"
+args = ["-y", "@google-cloud/observability-mcp"]
+
+[mcp_servers.observability.env]
+GOOGLE_CLOUD_PROJECT = "fxyer-ai"
+GOOGLE_CLOUD_IMPERSONATE_SERVICE_ACCOUNT = "mcp-log-reader@fxyer-ai.iam.gserviceaccount.com"
+
+[mcp_servers.openai-docs]
+url = "https://developers.openai.com/mcp"
+
+[mcp_servers.motion]
+type = "http"
+url = "https://mcp.motion.dev"
+
+[mcp_servers.motion-plus]
+type = "http"
+url = "https://mcp.motion.dev/plus"

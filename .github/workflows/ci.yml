@@ -1,0 +1,46 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  install:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    env:
+      CI: "true"
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: chezmoi apply
+        run: |
+          brew install chezmoi
+          chezmoi init --apply --source="$GITHUB_WORKSPACE" --no-tty
+
+      - name: Casks exist (incl. skipped in CI)
+        run: |
+          grep -oE '^\s*cask "[^"]+"' Brewfile | cut -d'"' -f2 | xargs brew info --cask >/dev/null
+
+      - name: Lint scripts
+        run: |
+          brew install shellcheck
+          mkdir -p "$RUNNER_TEMP/scripts"
+          for f in home/.chezmoiscripts/*; do
+            out="$RUNNER_TEMP/scripts/$(basename "$f" .tmpl)"
+            chezmoi execute-template < "$f" > "$out"
+          done
+          shellcheck bootstrap.sh "$RUNNER_TEMP"/scripts/*
+
+      - name: Verify
+        run: |
+          drift=$(chezmoi status --exclude=scripts,externals | grep -v ' \.claude\.json$' || true)
+          [ -z "$drift" ] || { echo "drift:"; echo "$drift"; exit 1; }
+          zsh -i -c 'echo prompt ok; command -v git gh jq fzf rbenv node pnpm bun uv tsc; ruby -v | grep -F "$(cat ~/.rbenv/version)"'
+          test -L ~/.zshrc
+          test -f ~/.codex/config.toml
+          jq -e '.mcpServers.linear' ~/.claude.json
+          find ~/.claude/skills -mindepth 1 -maxdepth 1 | wc -l

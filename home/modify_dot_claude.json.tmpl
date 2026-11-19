@@ -1,0 +1,134 @@
+#!/bin/sh
+# Merges managed MCP servers into ~/.claude.json, leaving everything else Claude writes untouched.
+managed=$(cat <<'JSON'
+{
+  "linear": {
+    "type": "http",
+    "url": "https://mcp.linear.app/mcp"
+  },
+  "resend": {
+    "type": "http",
+    "url": "https://resend.com/docs/mcp"
+  },
+  "convex": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "convex",
+      "mcp",
+      "start"
+    ]
+  },
+  "notion": {
+    "type": "http",
+    "url": "https://mcp.notion.com/mcp"
+  },
+  "growthbook": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@growthbook/mcp@latest"
+    ],
+    "env": {
+      "GB_API_KEY": "{{ template "op" dict "ctx" . "field" "GB_API_KEY" }}",
+      "GB_EMAIL": "{{ .workEmail }}"
+    }
+  },
+  "context7": {
+    "type": "http",
+    "url": "https://mcp.context7.com/mcp",
+    "headers": {
+      "CONTEXT7_API_KEY": "{{ template "op" dict "ctx" . "field" "CONTEXT7_API_KEY" }}"
+    }
+  },
+  "posthog": {
+    "type": "http",
+    "url": "https://mcp.posthog.com/mcp"
+  },
+  "uidotsh": {
+    "type": "http",
+    "url": "https://ui.sh/mcp?agent=claude",
+    "headers": {
+      "Authorization": "Bearer {{ template "op" dict "ctx" . "field" "UIDOTSH_TOKEN" }}"
+    }
+  },
+  "paper": {
+    "type": "stdio",
+    "command": "{{ .chezmoi.homeDir }}/.paper/bin/paper",
+    "args": [
+      "mcp"
+    ]
+  },
+  "recall": {
+    "type": "http",
+    "url": "https://eu-central-1.recall.ai/mcp"
+  },
+  "fyxer": {
+    "type": "http",
+    "url": "https://app.fyxer.com/mcp"
+  },
+  "cloudflare": {
+    "type": "http",
+    "url": "https://mcp.cloudflare.com/mcp"
+  },
+  "filesystem": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-filesystem",
+      "{{ .chezmoi.homeDir }}"
+    ],
+    "env": {}
+  },
+  "Neon": {
+    "type": "http",
+    "url": "https://mcp.neon.tech/mcp"
+  },
+  "fyxer-vault": {
+    "command": "{{ .chezmoi.homeDir }}/src/fyxerai/fyxer-vault/mcp/node_modules/.bin/tsx",
+    "args": [
+      "{{ .chezmoi.homeDir }}/src/fyxerai/fyxer-vault/mcp/src/index.ts"
+    ],
+    "env": {
+      "VAULT_URL": "https://fyxer-vault-api-ii3wszqvfq-ew.a.run.app"
+    }
+  },
+  "executor": {
+    "type": "http",
+    "url": "https://executor.sh/lucien-s-organization/mcp"
+  },
+  "openai-docs": {
+    "type": "http",
+    "url": "https://developers.openai.com/mcp"
+  },
+  "motion": {
+    "type": "http",
+    "url": "https://mcp.motion.dev"
+  },
+  "motion-plus": {
+    "type": "http",
+    "url": "https://mcp.motion.dev/plus"
+  },
+  "wonder": {
+    "type": "http",
+    "url": "https://mcp.wonder.so/mcp",
+    "headers": {
+      "X-Wonder-Arg-Streaming": "v1"
+    }
+  },
+  "gotemail": {
+    "type": "stdio",
+    "command": "/Applications/GotEmail.app/Contents/MacOS/GotEmail",
+    "args": [
+      "--mcp"
+    ],
+    "env": {}
+  }
+}
+JSON
+)
+input=$(cat)
+[ -n "$input" ] || input='{}'
+printf '%s' "$input" | jq --argjson managed "$managed" '.mcpServers = ((.mcpServers // {}) + $managed)'

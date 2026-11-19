@@ -1,0 +1,7 @@
+#!/bin/bash
+# ruby {{ include (joinPath .chezmoi.sourceDir "dot_rbenv/version") | sha256sum }}
+set -euo pipefail
+printf '\n\033[1;34m==> %s\033[0m\n' "Ruby $(cat "$HOME/.rbenv/version") via rbenv (compiles, a few minutes)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+command -v rbenv >/dev/null || { echo "rbenv not installed, skipping ruby" >&2; exit 0; }
+rbenv install --skip-existing "$(cat "$HOME/.rbenv/version")"

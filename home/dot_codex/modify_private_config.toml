@@ -1,0 +1,6 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- /* Merges managed settings into ~/.codex/config.toml; keeps projects, plugins and other keys Codex writes. */ -}}
+{{- $cur := dict -}}
+{{- with .chezmoi.stdin }}{{ $cur = fromToml . }}{{ end -}}
+{{- $managed := includeTemplate "codex-config.toml" . | fromToml -}}
+{{- mergeOverwrite $cur $managed | toToml -}}

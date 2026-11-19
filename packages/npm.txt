@@ -1,0 +1,7 @@
+@googleworkspace/cli
+@elevenlabs/cli
+agent-desktop
+ai-cli
+tsx
+typescript
+typescript-language-server

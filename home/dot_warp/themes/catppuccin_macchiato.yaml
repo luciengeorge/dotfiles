@@ -1,0 +1,25 @@
+name: Catppuccin Macchiato
+accent: '#C6D2FF'
+cursor: '#ffffff'
+background: '#24273a'
+foreground: '#ffffff'
+details: darker
+terminal_colors:
+  bright:
+    black: '#5b6078'
+    red: '#FF6467'
+    green: '#00D492'
+    yellow: '#FFD230'
+    blue: '#51A2FF'
+    magenta: '#A3B3FF'
+    cyan: '#00D3F2'
+    white: '#ffffff'
+  normal:
+    black: '#181926'
+    red: '#FF6467'
+    green: '#00D492'
+    yellow: '#FFD230'
+    blue: '#51A2FF'
+    magenta: '#A3B3FF'
+    cyan: '#00D3F2'
+    white: '#ffffff'

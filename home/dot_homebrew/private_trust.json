@@ -1,0 +1,18 @@
+{
+  "trustedformulae": [
+    "anomalyco/tap/opencode",
+    "anomalyco/tap/opencode-v2",
+    "antoniorodr/memo/memo",
+    "can1357/tap/omp",
+    "heroku/brew/heroku",
+    "modem-dev/tap/hunk",
+    "resend/cli/resend",
+    "shopify/shopify/shopify-cli",
+    "steipete/tap/remindctl",
+    "steipete/tap/sag"
+  ],
+  "trustedcasks": [
+    "nkzw-tech/tap/codiff",
+    "productdevbook/tap/portkiller"
+  ]
+}
