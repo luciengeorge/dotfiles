@@ -1,0 +1,107 @@
+[core]
+  editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[user]
+  name = Lucien George
+  email = luciengeorge95@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
+
+[init]
+  defaultBranch = main
+
+[alias]
+  co = checkout
+  st = status -sb
+  br = branch
+  ci = commit
+  fo = fetch origin
+  d = !git --no-pager diff
+  dt  = difftool
+  stat = !git --no-pager diff --stat
+  undo = reset --soft HEAD^
+  unstage = reset HEAD --
+  uncommit = reset HEAD^
+  discard = reset --hard HEAD^
+
+  # Clean merged branches (regular + squash-merged via GitHub PRs)
+  sweep = "!git branch --merged main | grep -v 'main$' | xargs -r git branch -d 2>/dev/null; gh pr list --state merged --json headRefName -q '.[].headRefName' | xargs -I {} git branch -D {} 2>/dev/null; git remote prune origin"
+
+  # http://www.jukie.net/bart/blog/pimping-out-git-log
+  lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+
+  # Serve local repo. http://coderwall.com/p/eybtga
+  # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
+  serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+
+  m = checkout main
+
+  recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+	patch = "!f() { git add . && git commit -m \"$1\" && npm version patch && git push && git push --tags; }; f"
+	minor = "!f() { git add . && git commit -m \"$1\" && npm version minor && git push && git push --tags; }; f"
+	major = "!f() { git add . && git commit -m \"$1\" && npm version major && git push && git push --tags; }; f"
+
+[help]
+  autocorrect = 20
+
+[push]
+  default = simple
+  autoSetupRemote = true
+
+[branch "main"]
+  mergeoptions = --no-edit
+
+[branch "master"]
+  mergeoptions = --no-edit
+
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+
+[pull]
+  rebase = true
+
+[fetch]
+  prune = true
+
+[diff]
+  colorMoved = zebra
+
+[interactive]
+  diffFilter = diff-so-fancy --patch
+
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  func = 146 bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
+[color "branch"]
+  current = green
+  remote = yellow
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_signers
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials

@@ -1,0 +1,25 @@
+name: Catppuccin Latte
+accent: '#155dfc'
+cursor: '#4c4f69'
+background: '#eff1f5'
+foreground: '#4c4f69'
+details: lighter
+terminal_colors:
+  bright:
+    black: '#acb0be'
+    red: '#e7000b'
+    green: '#00c950'
+    yellow: '#fe9a00'
+    blue: '#155dfc'
+    magenta: '#c800de'
+    cyan: '#0092b8'
+    white: '#bcc0cc'
+  normal:
+    black: '#5c5f77'
+    red: '#e7000b'
+    green: '#00c950'
+    yellow: '#fe9a00'
+    blue: '#155dfc'
+    magenta: '#c800de'
+    cyan: '#0092b8'
+    white: '#acb0be'

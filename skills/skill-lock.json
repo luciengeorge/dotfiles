@@ -1,0 +1,706 @@
+{
+  "version": 3,
+  "skills": {
+    "accessibility": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/addyosmani/web-quality-skills.git",
+      "skillPath": "skills/accessibility/SKILL.md"
+    },
+    "agent-desktop": {
+      "source": "vercel-labs/agent-desktop",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-desktop.git",
+      "skillPath": "skills/agent-desktop/SKILL.md"
+    },
+    "agents": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "agents/SKILL.md"
+    },
+    "alignment": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/alignment/SKILL.md"
+    },
+    "animate": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/animate/SKILL.md"
+    },
+    "animate-expo": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/animate-expo/SKILL.md"
+    },
+    "animation-performance": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/animation-performance/SKILL.md"
+    },
+    "animation-vocabulary": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/animation-vocabulary/SKILL.md"
+    },
+    "apple-design": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/apple-design/SKILL.md"
+    },
+    "ask-sonner": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/ask-sonner/SKILL.md"
+    },
+    "audit": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/audit/SKILL.md"
+    },
+    "avatar": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/avatar/SKILL.md"
+    },
+    "blank-page": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/blank-page/SKILL.md"
+    },
+    "bots": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/bots/SKILL.md"
+    },
+    "brainstorming": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/brainstorming/SKILL.md"
+    },
+    "break-ui": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/break-ui/SKILL.md"
+    },
+    "building-with-llms": {
+      "source": "refoundai/lenny-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/refoundai/lenny-skills.git",
+      "skillPath": "skills/building-with-llms/SKILL.md"
+    },
+    "color": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/color/SKILL.md"
+    },
+    "copy": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/copy/SKILL.md"
+    },
+    "create-payment-credential": {
+      "source": "stripe/link-cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/stripe/link-cli.git",
+      "skillPath": "skills/create-payment-credential/SKILL.md"
+    },
+    "deconstruct": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/deconstruct/SKILL.md"
+    },
+    "defaults": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/defaults/SKILL.md"
+    },
+    "deploy-to-vercel": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/deploy-to-vercel/SKILL.md"
+    },
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/taste-skill/SKILL.md"
+    },
+    "dubbing": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "dubbing/SKILL.md"
+    },
+    "electron": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
+      "skillPath": "skills/electron/SKILL.md"
+    },
+    "emil-design-eng": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/emil-design-eng/SKILL.md"
+    },
+    "figma-use": {
+      "source": "figma/mcp-server-guide",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/figma/mcp-server-guide.git",
+      "skillPath": "skills/figma-use/SKILL.md"
+    },
+    "find-animation-opportunities": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/find-animation-opportunities/SKILL.md"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md"
+    },
+    "frames": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/frames/SKILL.md"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/frontend-design/SKILL.md"
+    },
+    "full-output-enforcement": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/output-skill/SKILL.md"
+    },
+    "gather": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/gather/SKILL.md"
+    },
+    "gh-stack": {
+      "source": "github/gh-stack",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/gh-stack.git",
+      "skillPath": "skills/gh-stack/SKILL.md"
+    },
+    "high-end-visual-design": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/soft-skill/SKILL.md"
+    },
+    "icons": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/icons/SKILL.md"
+    },
+    "imagegen-frontend-mobile": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/imagegen-frontend-mobile/SKILL.md"
+    },
+    "imagegen-frontend-web": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/imagegen-frontend-web/SKILL.md"
+    },
+    "improve": {
+      "source": "shadcn/improve",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/improve.git",
+      "skillPath": "skills/improve/SKILL.md"
+    },
+    "improve-animations": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/improve-animations/SKILL.md"
+    },
+    "industrial-brutalist-ui": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/brutalist-skill/SKILL.md"
+    },
+    "install-anti-slop": {
+      "source": "dmmulroy/anti-slop",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/dmmulroy/anti-slop.git",
+      "skillPath": "skills/install-anti-slop/SKILL.md"
+    },
+    "keyboard": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/keyboard/SKILL.md"
+    },
+    "lab": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/lab/SKILL.md"
+    },
+    "llm-app-patterns": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/sickn33/antigravity-awesome-skills.git",
+      "skillPath": "skills/llm-app-patterns/SKILL.md"
+    },
+    "make-interfaces-feel-better": {
+      "source": "jakubkrehel/make-interfaces-feel-better",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/make-interfaces-feel-better.git",
+      "skillPath": "skills/make-interfaces-feel-better/SKILL.md"
+    },
+    "match": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/match/SKILL.md"
+    },
+    "merge-risk": {
+      "source": "warpdotdev/common-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/warpdotdev/common-skills.git",
+      "skillPath": ".agents/skills/merge-risk/SKILL.md"
+    },
+    "minimalist-ui": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/minimalist-skill/SKILL.md"
+    },
+    "moai-framework-electron": {
+      "source": "modu-ai/moai-adk",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/modu-ai/moai-adk.git",
+      "skillPath": ".claude/skills/moai-framework-electron/SKILL.md"
+    },
+    "mobile-native": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/mobile-native/SKILL.md"
+    },
+    "modern-web-guidance": {
+      "source": "GoogleChrome/modern-web-guidance",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/GoogleChrome/modern-web-guidance.git",
+      "skillPath": "skills/modern-web-guidance/SKILL.md"
+    },
+    "motion": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/motion/SKILL.md"
+    },
+    "music": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "music/SKILL.md"
+    },
+    "no-use-effect": {
+      "source": "factory-ai/factory-plugins",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+      "skillPath": "plugins/typescript/skills/no-use-effect/SKILL.md"
+    },
+    "onboarding": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "onboarding/SKILL.md"
+    },
+    "pick-ui-library": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/pick-ui-library/SKILL.md"
+    },
+    "playful-design-router": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/playful-design-router/SKILL.md"
+    },
+    "posthog-analytics": {
+      "source": "alinaqi/claude-bootstrap",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/alinaqi/claude-bootstrap.git",
+      "skillPath": "skills/posthog-analytics/SKILL.md"
+    },
+    "prompt-engineering": {
+      "source": "inferen-sh/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/inferen-sh/skills.git",
+      "skillPath": "guides/prompting/prompt-engineering/SKILL.md"
+    },
+    "prose": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/prose/SKILL.md"
+    },
+    "prototype": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/prototype/SKILL.md"
+    },
+    "rag-implementation": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/llm-application-dev/skills/rag-implementation/SKILL.md"
+    },
+    "react-doctor": {
+      "source": "millionco/react-doctor",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/millionco/react-doctor.git",
+      "skillPath": "skills/react-doctor/SKILL.md"
+    },
+    "realtime": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "realtime/SKILL.md"
+    },
+    "redesign-existing-projects": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/redesign-skill/SKILL.md"
+    },
+    "remotion-best-practices": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/remotion-dev/skills.git",
+      "skillPath": "skills/remotion/SKILL.md"
+    },
+    "remove-animations": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/remove-animations/SKILL.md"
+    },
+    "restraint": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/restraint/SKILL.md"
+    },
+    "reuse": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/reuse/SKILL.md"
+    },
+    "review-animations": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/review-animations/SKILL.md"
+    },
+    "rule": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/rule/SKILL.md"
+    },
+    "scope": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/scope/SKILL.md"
+    },
+    "semantic-html": {
+      "source": "schalkneethling/webdev-agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/schalkneethling/webdev-agent-skills.git",
+      "skillPath": "semantic-html/SKILL.md"
+    },
+    "setup-api-key": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "setup-api-key/SKILL.md"
+    },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/ui.git",
+      "skillPath": "skills/shadcn/SKILL.md"
+    },
+    "ship": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/ship/SKILL.md"
+    },
+    "similarity-search-patterns": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/llm-application-dev/skills/similarity-search-patterns/SKILL.md"
+    },
+    "sketchbook": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/sketchbook/SKILL.md"
+    },
+    "sound-effects": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "sound-effects/SKILL.md"
+    },
+    "speech-engine": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "speech-engine/SKILL.md"
+    },
+    "speech-to-text": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "speech-to-text/SKILL.md"
+    },
+    "stageshow": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/stageshow/SKILL.md"
+    },
+    "stripe-projects": {
+      "source": "docs.stripe.com",
+      "sourceType": "well-known",
+      "sourceUrl": "https://docs.stripe.com/.well-known/skills/stripe-projects/SKILL.md"
+    },
+    "tanstack-query-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/deckardger/tanstack-agent-skills.git",
+      "skillPath": "skills/tanstack-query/SKILL.md"
+    },
+    "text-to-speech": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "text-to-speech/SKILL.md"
+    },
+    "threejs-animation": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-animation/SKILL.md"
+    },
+    "threejs-fundamentals": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-fundamentals/SKILL.md"
+    },
+    "threejs-geometry": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-geometry/SKILL.md"
+    },
+    "threejs-interaction": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-interaction/SKILL.md"
+    },
+    "threejs-lighting": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-lighting/SKILL.md"
+    },
+    "threejs-loaders": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-loaders/SKILL.md"
+    },
+    "threejs-materials": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-materials/SKILL.md"
+    },
+    "threejs-postprocessing": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-postprocessing/SKILL.md"
+    },
+    "threejs-shaders": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-shaders/SKILL.md"
+    },
+    "threejs-textures": {
+      "source": "CloudAI-X/threejs-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/CloudAI-X/threejs-skills.git",
+      "skillPath": "skills/threejs-textures/SKILL.md"
+    },
+    "trading-analysis": {
+      "source": "gracefullight/stock-checker",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/gracefullight/stock-checker.git",
+      "skillPath": ".agents/skills/trading-analysis/SKILL.md"
+    },
+    "transitions-dev": {
+      "source": "Jakubantalik/transitions.dev",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Jakubantalik/transitions.dev.git",
+      "skillPath": "skills/transitions-dev/SKILL.md"
+    },
+    "typescript": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/pproenca/dot-skills.git",
+      "skillPath": "skills/.curated/typescript/SKILL.md"
+    },
+    "typescript-advanced-types": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/javascript-typescript/skills/typescript-advanced-types/SKILL.md"
+    },
+    "untangle-codebase": {
+      "source": "caldoai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/caldoai/skills.git",
+      "skillPath": "skills/untangle-codebase/SKILL.md"
+    },
+    "update-skills-from-changelog": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": ".agents/skills/update-skills-from-changelog/SKILL.md"
+    },
+    "vercel-cli-with-tokens": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/vercel-cli-with-tokens/SKILL.md"
+    },
+    "vercel-composition-patterns": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/composition-patterns/SKILL.md"
+    },
+    "vercel-optimize": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/vercel-optimize/SKILL.md"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-best-practices/SKILL.md"
+    },
+    "vercel-react-native-skills": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-native-skills/SKILL.md"
+    },
+    "vercel-react-view-transitions": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-view-transitions/SKILL.md"
+    },
+    "verify": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/verify/SKILL.md"
+    },
+    "viewports": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/viewports/SKILL.md"
+    },
+    "voice-changer": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "voice-changer/SKILL.md"
+    },
+    "voice-isolator": {
+      "source": "elevenlabs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/elevenlabs/skills.git",
+      "skillPath": "voice-isolator/SKILL.md"
+    },
+    "web-design-guidelines": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/web-design-guidelines/SKILL.md"
+    },
+    "write-swift": {
+      "source": "playful-design/router",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/playful-design/router.git",
+      "skillPath": "skills/write-swift/SKILL.md"
+    },
+    "writing-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/writing-guidelines/SKILL.md"
+    },
+    "zod": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/pproenca/dot-skills.git",
+      "skillPath": "skills/.curated/zod/SKILL.md"
+    }
+  }
+}

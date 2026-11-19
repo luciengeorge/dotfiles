@@ -1,0 +1,12 @@
+#!/bin/bash
+# shellcheck disable=SC1091
+{{- $lock := joinPath .chezmoi.workingTree "skills/skill-lock.json" }}
+# lock {{ include $lock | sha256sum }}
+set -uo pipefail
+[[ -r $HOME/.vite-plus/env ]] && . "$HOME/.vite-plus/env"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+jq -r '.skills | to_entries | group_by(.value.source)[] | [.[0].value.source, (map(.key) | join(" "))] | @tsv' {{ $lock | quote }} |
+  while IFS=$'\t' read -r src names; do
+    # shellcheck disable=SC2086
+    npx -y skills add "$src" -g -a claude-code -s $names -y </dev/null || echo "skills: failed $src" >&2
+  done

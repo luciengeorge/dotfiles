@@ -1,0 +1,13 @@
+{{- $secrets := eq (env "CI") "" -}}
+{{- if and $secrets stdinIsATTY -}}
+{{-   $secrets = promptBoolOnce . "secrets" "Pull secrets from 1Password" true -}}
+{{- end -}}
+sourceDir = {{ .chezmoi.workingTree | quote }}
+mode = "symlink"
+
+[data]
+  secrets = {{ $secrets }}
+  opVault = "Employee"
+  opItem = "dotfiles"
+  opAccount = "fyxerai.1password.eu"
+  workEmail = "lucien.george@fyxer.com"

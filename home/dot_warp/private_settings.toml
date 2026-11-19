@@ -1,0 +1,166 @@
+[agents]
+cloud_conversation_storage_enabled = true
+
+[agents.warp_agent]
+
+[agents.warp_agent.other]
+should_show_oz_updates_in_zero_state = false
+
+[agents.warp_agent.input]
+nld_in_terminal_enabled = true
+
+[agents.voice]
+voice_input_toggle_key = "fn"
+
+[agents.execution_profiles]
+
+[agents.execution_profiles.default]
+apply_code_diffs = "agent_decides"
+ask_user_question = "always_ask"
+autosync_plans_to_warp_drive = true
+command_allowlist = []
+command_denylist = [
+  'bash(\s.*)?',
+  'fish(\s.*)?',
+  'pwsh(\s.*)?',
+  'sh(\s.*)?',
+  'zsh(\s.*)?',
+  'curl(\s.*)?',
+  'eval(\s.*)?',
+  'exec(\s.*)?',
+  'source(\s.*)?',
+  'rm(\s.*)?',
+  'wget(\s.*)?',
+  'dig(\s.*)?',
+  'nslookup(\s.*)?',
+  'host(\s.*)?',
+  'ssh(\s.*)?',
+  'scp(\s.*)?',
+  'rsync(\s.*)?',
+  'telnet(\s.*)?',
+]
+computer_use = "always_ask"
+directory_allowlist = []
+execute_commands = "always_ask"
+mcp_allowlist = []
+mcp_denylist = []
+mcp_permissions = "agent_decides"
+name = "Default"
+read_files = "agent_decides"
+run_agents = "always_ask"
+web_search_enabled = true
+write_to_pty = "always_allow"
+
+[appearance]
+spacing = "compact"
+
+[appearance.vertical_tabs]
+enabled = false
+view_mode = "compact"
+display_granularity = "tabs"
+
+[appearance.text]
+font_size = 13.0
+notebook_font_size = 14.0
+
+[appearance.panes]
+should_dim_inactive_panes = true
+
+[appearance.themes]
+selected_system_themes = {
+  dark = { custom = { name = "Catppuccin Macchiato", path = "catppuccin_macchiato.yaml" } },
+  light = { custom = { name = "Catppuccin Latte", path = "catppuccin_latte.yaml" } },
+}
+system_theme = true
+
+[appearance.cursor]
+cursor_blink = "disabled"
+cursor_display_type = "block"
+
+[appearance.input]
+input_mode = "waterfall"
+
+[appearance.blocks]
+show_block_dividers = false
+
+[appearance.window]
+zoom_level = 100
+
+[appearance.tabs]
+show_indicators_button = true
+workspace_decoration_visibility = "hide_fullscreen"
+
+[terminal]
+show_terminal_zero_state_block = false
+
+[terminal.input]
+honor_ps1 = false
+input_box_type_setting = "universal"
+
+[privacy]
+crash_reporting_enabled = true
+telemetry_enabled = true
+custom_secret_regex_list = [
+  { name = "IPv4 Address", pattern = '\b((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}\b' },
+  {
+    name = "IPv6 Address",
+    pattern = '\b((([0-9A-Fa-f]{1,4}:){1,6}:)|(([0-9A-Fa-f]{1,4}:){7}))([0-9A-Fa-f]{1,4})\b',
+  },
+  { name = "Slack App Token", pattern = '\bxapp-[0-9]+-[A-Za-z0-9_]+-[0-9]+-[a-f0-9]+\b' },
+  { name = "Phone Number", pattern = '\b(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\b' },
+  {
+    name = "AWS Access ID",
+    pattern = '\b(AKIA|A3T|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{12,}\b',
+  },
+  {
+    name = "MAC Address",
+    pattern = '\b((([a-zA-z0-9]{2}[-:]){5}([a-zA-z0-9]{2}))|(([a-zA-z0-9]{2}:){5}([a-zA-z0-9]{2})))\b',
+  },
+  { name = "Google API Key", pattern = '\bAIza[0-9A-Za-z-_]{35}\b' },
+  { name = "Google OAuth ID", pattern = '\b[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com\b' },
+  { name = "GitHub Classic Personal Access Token", pattern = '\bghp_[A-Za-z0-9_]{36}\b' },
+  { name = "GitHub Fine-Grained Personal Access Token", pattern = '\bgithub_pat_[A-Za-z0-9_]{82}\b' },
+  { name = "GitHub OAuth Access Token", pattern = '\bgho_[A-Za-z0-9_]{36}\b' },
+  { name = "GitHub User-to-Server Token", pattern = '\bghu_[A-Za-z0-9_]{36}\b' },
+  { name = "GitHub Server-to-Server Token", pattern = '\bghs_[A-Za-z0-9_]{36}\b' },
+  { name = "Stripe Key", pattern = '\b(?:r|s)k_(test|live)_[0-9a-zA-Z]{24}\b' },
+  { name = "Firebase Auth Domain", pattern = '\b([a-z0-9-]){1,30}(\.firebaseapp\.com)\b' },
+  { name = "JWT", pattern = '\b(ey[a-zA-z0-9_\-=]{10,}\.){2}[a-zA-z0-9_\-=]{10,}\b' },
+  { name = "OpenAI API Key", pattern = '\bsk-[a-zA-Z0-9]{48}\b' },
+  { name = "Anthropic API Key", pattern = '\bsk-ant-api\d{0,2}-[a-zA-Z0-9\-]{80,120}\b' },
+  { name = "Generic SK API Key", pattern = '\bsk-[a-zA-Z0-9\-]{10,100}\b' },
+  { name = "Fireworks API Key", pattern = '\bfw_[a-zA-Z0-9]{24}\b' },
+]
+
+[general]
+login_item = false
+show_warning_before_quitting = false
+restore_session = false
+default_session_mode = "terminal"
+
+[account]
+is_settings_sync_enabled = true
+
+[code]
+
+[code.editor]
+open_code_panels_file_editor = { external_editor = "cursor" }
+open_file_editor = { external_editor = "cursor" }
+
+[code.indexing]
+agent_mode_codebase_context_auto_indexing = true
+
+[accessibility]
+accessibility_verbosity = "verbose"
+
+[notifications]
+toast_duration_secs = 8
+
+[notifications.preferences]
+is_agent_task_completed_enabled = true
+is_long_running_enabled = true
+is_needs_attention_enabled = true
+is_password_prompt_enabled = true
+long_running_threshold = 30
+mode = "enabled"
+play_notification_sound = true

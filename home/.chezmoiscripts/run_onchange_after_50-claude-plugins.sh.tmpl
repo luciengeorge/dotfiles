@@ -1,0 +1,12 @@
+#!/bin/bash
+# settings {{ include "dot_claude/private_settings.json" | sha256sum }}
+set -uo pipefail
+export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
+command -v claude >/dev/null || { echo "claude not installed, skipping plugins" >&2; exit 0; }
+settings=$HOME/.claude/settings.json
+jq -r '.extraKnownMarketplaces // {} | to_entries[] | .value.source | select(.source == "github") | .repo' "$settings" |
+  while read -r repo; do claude plugin marketplace add "$repo" </dev/null || true; done
+jq -r '.extraKnownMarketplaces // {} | to_entries[] | .value.source | select(.source == "git") | .url' "$settings" |
+  while read -r url; do claude plugin marketplace add "$url" </dev/null || true; done
+jq -r '.enabledPlugins // {} | to_entries[] | select(.value) | .key | select(endswith("@builtin") | not)' "$settings" |
+  while read -r p; do claude plugin install "$p" </dev/null || echo "plugin: failed $p" >&2; done

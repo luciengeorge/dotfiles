@@ -1,0 +1,6 @@
+#!/bin/bash
+# Brewfile hash: {{ include (joinPath .chezmoi.workingTree "Brewfile") | sha256sum }}
+set -euo pipefail
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew bundle --file={{ joinPath .chezmoi.workingTree "Brewfile" | quote }} --no-upgrade \
+  || echo "warning: some Brewfile entries failed, continuing. Re-run: brew bundle --file={{ joinPath .chezmoi.workingTree "Brewfile" }}" >&2

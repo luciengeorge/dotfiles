@@ -1,0 +1,21 @@
+#!/bin/bash
+# shellcheck disable=SC1091,SC2046
+{{- $pkgs := joinPath .chezmoi.workingTree "packages" }}
+# npm {{ include (joinPath $pkgs "npm.txt") | sha256sum }}
+# pnpm {{ include (joinPath $pkgs "pnpm.txt") | sha256sum }}
+# bun {{ include (joinPath $pkgs "bun.txt") | sha256sum }}
+# uv {{ include (joinPath $pkgs "uv.txt") | sha256sum }}
+set -uo pipefail
+eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -r $HOME/.vite-plus/env ]] && . "$HOME/.vite-plus/env"
+export PNPM_HOME=$HOME/Library/pnpm BUN_INSTALL=$HOME/.bun
+export PATH=$PNPM_HOME:$BUN_INSTALL/bin:$HOME/.local/bin:$PATH
+pkgs={{ $pkgs | quote }}
+list() { grep -v '^\s*$' "$pkgs/$1"; }
+
+npm install -g $(list npm.txt)
+command -v pnpm >/dev/null || npm install -g pnpm
+pnpm add -g $(list pnpm.txt)
+command -v bun >/dev/null || curl -fsSL https://bun.sh/install | bash
+bun add -g $(list bun.txt)
+for p in $(list uv.txt); do uv tool install "$p"; done

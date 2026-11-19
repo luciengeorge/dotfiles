@@ -1,0 +1,1 @@
+{{- if .ctx.secrets -}}{{ onepasswordRead (printf "op://%s/%s/%s" .ctx.opVault .ctx.opItem .field) .ctx.opAccount }}{{- else -}}REPLACE_ME{{- end -}}
