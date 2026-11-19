@@ -16,9 +16,10 @@ Apply then runs, in order:
 1. Vite+ (node, npm, pnpm)
 2. `brew bundle` from `Brewfile` (re-runs when it changes; third-party taps trusted via `~/.homebrew/trust.json`)
 3. global npm / pnpm / bun / uv packages from `packages/*.txt`
-4. skills from `skills/skill-lock.json` (`npx skills add`, linked into Claude)
-5. Claude plugins and marketplaces from `~/.claude/settings.json`
-6. gh extensions
+4. Ruby version from `~/.rbenv/version` (`rbenv install`)
+5. skills from `skills/skill-lock.json` (`npx skills add`, linked into Claude)
+6. Claude plugins and marketplaces from `~/.claude/settings.json`
+7. gh extensions
 
 After: create an SSH key (or use 1Password's agent), add it to GitHub as auth + signing key, update `home/dot_config/git/allowed_signers`.
 

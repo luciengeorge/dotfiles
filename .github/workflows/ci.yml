@@ -38,7 +38,7 @@ jobs:
       - name: Verify
         run: |
           chezmoi verify --exclude=scripts,externals
-          zsh -i -c 'echo prompt ok; command -v git gh jq fzf rbenv node pnpm bun uv'
+          zsh -i -c 'echo prompt ok; command -v git gh jq fzf rbenv node pnpm bun uv tsc; ruby -v | grep -F "$(cat ~/.rbenv/version)"'
           test -L ~/.zshrc
           test -f ~/.codex/config.toml
           jq -e '.mcpServers.linear' ~/.claude.json
