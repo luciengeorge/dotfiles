@@ -16,14 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Casks exist
-        run: |
-          grep -oE '^\s*cask "[^"]+"' Brewfile | cut -d'"' -f2 | xargs brew info --cask >/dev/null
-
       - name: chezmoi apply
         run: |
           brew install chezmoi
           chezmoi init --apply --source="$GITHUB_WORKSPACE" --no-tty
+
+      - name: Casks exist (incl. skipped in CI)
+        run: |
+          grep -oE '^\s*cask "[^"]+"' Brewfile | cut -d'"' -f2 | xargs brew info --cask >/dev/null
 
       - name: Lint scripts
         run: |

@@ -13,8 +13,8 @@ The gist mirrors `bootstrap.sh` (repo is private). After editing it: `gh gist ed
 `bootstrap.sh` is self-contained: CLT, Homebrew, gh (+ login), chezmoi, 1Password (waits for the CLI integration), then `chezmoi init --apply`. A failed Brewfile entry warns instead of stopping the apply.
 Apply then runs, in order:
 
-1. `brew bundle` from `Brewfile` (re-runs when it changes)
-2. Vite+ (node, npm, pnpm)
+1. Vite+ (node, npm, pnpm)
+2. `brew bundle` from `Brewfile` (re-runs when it changes; third-party taps trusted via `~/.homebrew/trust.json`)
 3. global npm / pnpm / bun / uv packages from `packages/*.txt`
 4. skills from `skills/skill-lock.json` (`npx skills add`, linked into Claude)
 5. Claude plugins and marketplaces from `~/.claude/settings.json`
