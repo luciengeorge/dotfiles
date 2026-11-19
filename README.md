@@ -1,6 +1,6 @@
 # dotfiles
 
-macOS setup managed with [chezmoi](https://chezmoi.io). Secrets come from 1Password (`op://Employee/dotfiles/<FIELD>`), never the repo.
+macOS setup managed with [chezmoi](https://chezmoi.io). Secrets come from 1Password (personal account, `op://Private/dotfiles/<FIELD>`), never the repo.
 
 ## Install on a new Mac
 
@@ -8,7 +8,7 @@ macOS setup managed with [chezmoi](https://chezmoi.io). Secrets come from 1Passw
 
 - An Apple Silicon Mac (Homebrew lives in `/opt/homebrew`).
 - Your Mac login password (Homebrew asks for it).
-- A GitHub account and a 1Password account with access to the `dotfiles` item (vault `Employee`). No access? Answer "no" to the secrets question and fill them in later.
+- A GitHub account and your personal 1Password account (`my.1password.com`, item `dotfiles` in vault `Private`). No access? Answer "no" to the secrets question and fill them in later.
 - Power plugged in: the full run takes a while, mostly `brew bundle`.
 
 ### 1. Run one command
