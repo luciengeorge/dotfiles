@@ -5,10 +5,8 @@ macOS setup managed with [chezmoi](https://chezmoi.io). Secrets come from 1Passw
 ## New Mac
 
 ```sh
-curl -fsSL https://gist.githubusercontent.com/luciengeorge/beeb959749187d49628832f71a02ac7f/raw/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/luciengeorge/dotfiles/main/bootstrap.sh | bash
 ```
-
-The gist mirrors `bootstrap.sh` (repo is private). After editing it: `gh gist edit beeb959749187d49628832f71a02ac7f -f bootstrap.sh bootstrap.sh`.
 
 `bootstrap.sh` is self-contained: CLT, Homebrew, gh (+ login), chezmoi, 1Password (waits for the CLI integration), then clones this repo to `~/src/luciengeorge/dotfiles` and runs `chezmoi init --apply`. Each step prints a blue `==>` header; installs stream their own output. A failed Brewfile entry warns instead of stopping the apply.
 Apply then runs, in order:

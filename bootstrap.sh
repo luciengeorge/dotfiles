@@ -1,5 +1,5 @@
 #!/bin/bash
-# New Mac, one command: see README (mirrored to a gist)
+# New Mac, one command: see README
 set -euo pipefail
 step() { printf '\n\033[1;34m==> %s\033[0m\n' "$*"; }
 
