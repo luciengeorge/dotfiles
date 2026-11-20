@@ -25,6 +25,13 @@ until op vault list >/dev/null 2>&1; do
   read -rp "Open 1Password, sign in, enable Settings > Developer > Integrate with 1Password CLI, then press enter" </dev/tty
 done
 
+step "Obsidian vault -> ~/obsidian"
+if [[ ! -d "$HOME/obsidian/.git" ]]; then
+  gh repo clone luciengeorge/obsidian "$HOME/obsidian"
+  printf '#!/bin/sh\ngit push -q origin HEAD >/dev/null 2>&1 &\n' > "$HOME/obsidian/.git/hooks/post-commit"
+  chmod +x "$HOME/obsidian/.git/hooks/post-commit"
+fi
+
 step "dotfiles -> ~/src/luciengeorge/dotfiles (then installs everything, takes a while)"
 chezmoi init --apply --source "$HOME/src/luciengeorge/dotfiles" luciengeorge </dev/tty
 step "Done. Open a new terminal."

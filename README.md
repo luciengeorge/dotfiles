@@ -36,7 +36,7 @@ They come in this order. Everything else runs on its own.
 
 ### 3. Wait for the install
 
-The repo is cloned to `~/src/luciengeorge/dotfiles`, the config files are linked into `~`, then these run in order:
+The Obsidian vault (private repo) is cloned to `~/obsidian` with a hook that pushes each commit. The repo is cloned to `~/src/luciengeorge/dotfiles`, the config files are linked into `~`, then these run in order:
 
 1. Vite+ (node, npm, pnpm)
 2. `brew bundle` from `Brewfile` (apps and CLIs). A failed entry prints a warning and the rest carries on.
@@ -52,6 +52,7 @@ It ends with `==> Done. Open a new terminal.`
 
 - Open a new terminal so the shell config loads.
 - Sign in to the apps you use (1Password, Slack, Chrome, Claude, etc.).
+- Obsidian: open `~/obsidian` as a vault, then log in again to the Garmin and Strava plugins (their tokens aren't in git).
 - SSH: create a key (or use 1Password's SSH agent), add it to GitHub as an auth and a signing key, then add it to `home/dot_config/git/allowed_signers`.
 
 ### If something fails
@@ -83,7 +84,7 @@ It ends with `==> Done. Open a new terminal.`
 ## Day to day
 
 - Plain files are symlinked to this repo, so edits land here directly.
-- `private_` and template files are copies. After an app rewrites one (Claude `settings.json`, Warp `settings.toml`), run `chezmoi re-add`.
+- `private_` and template files are copies. After an app rewrites one (Claude `settings.json`, Warp `settings.toml`, T3 Code `~/.t3/userdata/*.json`), run `chezmoi re-add`.
 - New secret: add a field to the `dotfiles` 1Password item, reference it with `{{ includeTemplate "op" (dict "ctx" . "field" "NAME") }}`.
 - Machine-only shell config: `~/.config/zsh/local.zsh` (not tracked).
 - Refresh lists: `brew bundle dump --describe --force`, `npm ls -g`, `cp ~/.agents/.skill-lock.json skills/` (trim to `source*`/`skillPath`).

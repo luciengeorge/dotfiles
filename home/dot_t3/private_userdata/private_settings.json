@@ -1,0 +1,89 @@
+{
+  "storageCleanup": {
+    "worktreeAfterDays": 8,
+    "worktreeSettledAfterDays": 8,
+    "worktreeOnMerge": true,
+    "worktreeOnDelete": true,
+    "worktreeUnchanged": true
+  },
+  "defaultAutoPull": true,
+  "defaultModelSelection": {
+    "instanceId": "claudeAgent",
+    "model": "claude-opus-5-5",
+    "options": [
+      {
+        "id": "effort",
+        "value": "high"
+      }
+    ]
+  },
+  "fallbackModelSelection": {
+    "instanceId": "codex",
+    "model": "gpt-6.1-sol",
+    "options": [
+      {
+        "id": "reasoningEffort",
+        "value": "high"
+      },
+      {
+        "id": "serviceTier",
+        "value": "priority"
+      }
+    ]
+  },
+  "projectSettingsFolded": true,
+  "enableAgentDeviceAccess": true,
+  "enableDeviceSupport": true,
+  "deviceOnboardingCompleted": true,
+  "idleCompaction": "onReturn",
+  "snoozeLimitedThreads": true,
+  "autoResumeLimitedThreads": true,
+  "sidebarAutoSettleKeepPullRequests": true,
+  "defaultThreadEnvMode": "worktree",
+  "addProjectBaseDirectory": "~/src/",
+  "branchNamePrefix": "lucien",
+  "removeAgentCreditsOnMerge": true,
+  "providerInstances": {
+    "opencode": {
+      "driver": "opencode",
+      "enabled": true,
+      "config": {
+        "binaryPath": "/opt/homebrew/bin/opencode",
+        "serverUrl": "",
+        "serverPassword": "",
+        "customModels": []
+      }
+    },
+    "grok": {
+      "driver": "grok",
+      "enabled": false,
+      "config": {
+        "binaryPath": "/Users/lucien/.local/bin/grok",
+        "customModels": []
+      }
+    },
+    "cursor": {
+      "driver": "cursor",
+      "enabled": true,
+      "config": {
+        "binaryPath": "/Users/lucien/.local/bin/cursor-agent",
+        "apiEndpoint": "",
+        "customModels": []
+      }
+    },
+    "claudeAgent": {
+      "driver": "claudeAgent",
+      "enabled": true,
+      "config": {
+        "binaryPath": "/Users/lucien/.local/bin/claude"
+      }
+    },
+    "codex": {
+      "driver": "codex",
+      "enabled": true,
+      "config": {
+        "binaryPath": "/opt/homebrew/bin/codex"
+      }
+    }
+  }
+}
