@@ -81,6 +81,7 @@ It ends with `==> Done. Open a new terminal.`
 | `home/.chezmoitemplates/` | shared templates (`op` secret helper, Codex config) |
 | `home/.chezmoiscripts/` | install scripts |
 | `Brewfile`, `packages/`, `skills/` | what gets installed |
+| `grok-bot/` | Grok Bot fleet templates and setup prompt (not applied by chezmoi) |
 
 ## Day to day
 
