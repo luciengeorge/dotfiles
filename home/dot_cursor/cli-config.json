@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(ls)"
+    ],
+    "deny": []
+  },
+  "version": 1,
+  "editor": {
+    "vimMode": false
+  },
+  "display": {
+    "showLineNumbers": true
+  },
+  "model": {
+    "modelId": "claude-4-sonnet",
+    "displayModelId": "sonnet-4",
+    "displayName": "Claude 4 Sonnet",
+    "displayNameShort": "Sonnet 4",
+    "aliases": [
+      "sonnet",
+      "sonnet-4"
+    ]
+  },
+  "hasChangedDefaultModel": true,
+  "privacyCache": {
+    "ghostMode": false,
+    "privacyMode": 3,
+    "updatedAt": 1758712591407
+  },
+  "network": {
+    "useHttp1ForAgent": false
+  }
+}

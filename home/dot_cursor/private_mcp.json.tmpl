@@ -1,0 +1,149 @@
+{
+  "mcpServers": {
+    "linear": {
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "growthbook": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@growthbook/mcp@latest"
+      ],
+      "env": {
+        "GB_API_KEY": "{{ includeTemplate "op" (dict "ctx" . "field" "GB_API_KEY") }}",
+        "GB_EMAIL": "{{ .workEmail }}"
+      }
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{{ includeTemplate "op" (dict "ctx" . "field" "CONTEXT7_API_KEY") }}"
+      }
+    },
+    "posthog": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://mcp.posthog.com/sse",
+        "--header",
+        "Authorization:${POSTHOG_AUTH_HEADER}"
+      ],
+      "env": {
+        "POSTHOG_AUTH_HEADER": "Bearer {{ includeTemplate "op" (dict "ctx" . "field" "POSTHOG_API_KEY") }}"
+      }
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp",
+      "headers": {
+        "Authorization": "Bearer {{ includeTemplate "op" (dict "ctx" . "field" "GITHUB_PAT") }}"
+      }
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "Sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
+    },
+    "uidotsh": {
+      "url": "https://ui.sh/mcp?agent=cursor",
+      "headers": {
+        "Authorization": "Bearer {{ includeTemplate "op" (dict "ctx" . "field" "UIDOTSH_TOKEN") }}"
+      }
+    },
+    "observability": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@google-cloud/observability-mcp"
+      ],
+      "env": {
+        "GOOGLE_CLOUD_PROJECT": "fxyer-ai",
+        "GOOGLE_CLOUD_IMPERSONATE_SERVICE_ACCOUNT": "mcp-log-reader@fxyer-ai.iam.gserviceaccount.com"
+      }
+    },
+    "Neon": {
+      "url": "https://mcp.neon.tech/mcp"
+    },
+    "executor": {
+      "url": "https://executor.sh/lucien-s-organization/mcp"
+    },
+    "resend": {
+      "url": "https://resend.com/docs/mcp"
+    },
+    "convex": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "convex",
+        "mcp",
+        "start"
+      ]
+    },
+    "v0": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.v0.dev",
+        "--header",
+        "Authorization: Bearer {{ includeTemplate "op" (dict "ctx" . "field" "V0_API_KEY") }}"
+      ]
+    },
+    "paper": {
+      "type": "stdio",
+      "command": "{{ .chezmoi.homeDir }}/.paper/bin/paper",
+      "args": [
+        "mcp"
+      ]
+    },
+    "recall": {
+      "url": "https://eu-central-1.recall.ai/mcp"
+    },
+    "fyxer": {
+      "url": "https://app.fyxer.com/mcp"
+    },
+    "cloudflare": {
+      "url": "https://mcp.cloudflare.com/mcp"
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "{{ .chezmoi.homeDir }}"
+      ],
+      "env": {}
+    },
+    "fyxer-vault": {
+      "command": "{{ .chezmoi.homeDir }}/src/fyxerai/fyxer-vault/mcp/node_modules/.bin/tsx",
+      "args": [
+        "{{ .chezmoi.homeDir }}/src/fyxerai/fyxer-vault/mcp/src/index.ts"
+      ],
+      "env": {
+        "VAULT_URL": "http://localhost:3001"
+      }
+    },
+    "openai-docs": {
+      "url": "https://developers.openai.com/mcp"
+    },
+    "vercel": {
+      "url": "https://mcp.vercel.com"
+    },
+    "motion": {
+      "url": "https://mcp.motion.dev"
+    },
+    "motion-plus": {
+      "url": "https://mcp.motion.dev/plus"
+    }
+  }
+}

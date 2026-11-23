@@ -1,0 +1,12 @@
+theme = "Catppuccin Frappe"
+font-family = "Monaco"
+window-padding-color = background
+cursor-color = "#ffffff"
+shell-integration-features = no-cursor
+cursor-style = block
+window-colorspace = srgb
+copy-on-select = clipboard
+unfocused-split-opacity = 1
+foreground = #ffffff
+cursor-style-blink = false
+keybind = shift+enter=text:\n

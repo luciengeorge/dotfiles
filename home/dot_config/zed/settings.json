@@ -1,0 +1,81 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "agent_buffer_font_size": 12.0,
+  "agent_ui_font_size": 14.0,
+  "buffer_font_family": "Monaco",
+  "icon_theme": "Zed (Default)",
+  "ui_font_family": "Monaco",
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true
+  },
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "scroll_beyond_last_line": "off",
+  "gutter": {
+    "folds": true
+  },
+  "minimap": {
+    "current_line_highlight": "all",
+    "thumb_border": "left_open",
+    "thumb": "always",
+    "show": "always"
+  },
+  "file_types": {
+    "json": ["*.ejson"],
+    "tailwindcss": ["*.css"]
+  },
+  "auto_indent_on_paste": true,
+  "linked_edits": true,
+  "show_edit_predictions": true,
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+  "wrap_guides": [],
+  "soft_wrap": "editor_width",
+  "tab_size": 2,
+  "base_keymap": "VSCode",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 12.0,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "One Dark"
+  },
+  "double_click_in_multibuffer": "open",
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    }
+  }
+}
