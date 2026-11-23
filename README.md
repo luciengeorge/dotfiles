@@ -40,11 +40,12 @@ The Obsidian vault (private repo) is cloned to `~/obsidian` with a hook that pus
 
 1. Vite+ (node, npm, pnpm)
 2. `brew bundle` from `Brewfile` (apps and CLIs). A failed entry prints a warning and the rest carries on.
-3. Global npm / pnpm / bun / uv packages from `packages/*.txt`
-4. Ruby from `~/.rbenv/version` (compiles, a few minutes)
-5. Agent skills from `skills/skill-lock.json`
-6. Claude plugins and marketplaces
-7. gh extensions
+3. Non-Homebrew macOS apps (`GotEmail`, `Wonder`) and Sublime Package Control
+4. Global npm / pnpm / bun / uv packages from `packages/*.txt`
+5. Ruby from `~/.rbenv/version` (compiles, a few minutes)
+6. Agent skills from `skills/skill-lock.json`
+7. Claude plugins and marketplaces
+8. gh extensions
 
 It ends with `==> Done. Open a new terminal.`
 

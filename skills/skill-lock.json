@@ -7,6 +7,12 @@
       "sourceUrl": "https://github.com/addyosmani/web-quality-skills.git",
       "skillPath": "skills/accessibility/SKILL.md"
     },
+    "agent-browser": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
+      "skillPath": "skills/agent-browser/SKILL.md"
+    },
     "agent-desktop": {
       "source": "vercel-labs/agent-desktop",
       "sourceType": "github",
@@ -605,6 +611,12 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/wshobson/agents.git",
       "skillPath": "plugins/javascript-typescript/skills/typescript-advanced-types/SKILL.md"
+    },
+    "ui-sdk": {
+      "source": "vercel-labs/ui",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/ui.git",
+      "skillPath": "packages/core/skills/ui-sdk/SKILL.md"
     },
     "untangle-codebase": {
       "source": "caldoai/skills",
