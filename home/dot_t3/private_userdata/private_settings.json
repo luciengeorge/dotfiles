@@ -66,7 +66,7 @@
       "driver": "cursor",
       "enabled": true,
       "config": {
-        "binaryPath": "/Users/lucien/.local/bin/cursor-agent",
+        "binaryPath": "/opt/homebrew/bin/cursor-agent",
         "apiEndpoint": "",
         "customModels": []
       }
@@ -75,7 +75,7 @@
       "driver": "claudeAgent",
       "enabled": true,
       "config": {
-        "binaryPath": "/Users/lucien/.local/bin/claude"
+        "binaryPath": "/opt/homebrew/bin/claude"
       }
     },
     "codex": {
